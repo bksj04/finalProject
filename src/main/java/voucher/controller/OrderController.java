@@ -16,7 +16,7 @@ public class OrderController {
 	private final String command="/order.voucher";
 	private final String getPage="payMain";
 	
-	@Autowired
+	@Autowired(required=false)
 	OrderDao odao;
 	
 	OrderBean ob = new OrderBean();
