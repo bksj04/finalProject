@@ -30,8 +30,16 @@ table{
 						</td>
 				</c:if>
 					<c:forEach var="watch" items="${wblists}">
-						<td><a href="detail${fn:toUpperCase(fn:substring(watch.video_category, 0, 1))}${fn:toLowerCase(fn:substring(watch.video_category, 1,fn:length(watch.video_category)))}.category?num=${watch.video_num}"><img src="resources/images/poster/${watch.video_image}"
-							width="200" height="200"></a></td>
+						<td>
+						<c:if test="${watch.video_category == 'main' }">
+						<a href="detail${watch.video_category}.wa?num=${watch.video_num}"><img src="resources/images/poster/${watch.video_image}"
+							width="200" height="200"></a>
+						</c:if>
+						<c:if test="${watch.video_category != 'main' }">
+						<a href="detail${fn:toUpperCase(fn:substring(watch.video_category, 0, 1))}${fn:toLowerCase(fn:substring(watch.video_category, 1,fn:length(watch.video_category)))}.category?num=${watch.video_num}"><img src="resources/images/poster/${watch.video_image}"
+							width="200" height="200"></a>
+							</c:if>
+							</td>
 					</c:forEach>
 				</tr>
 				<tr>
@@ -52,8 +60,16 @@ table{
 					<td>찜한 컨텐츠가 없습니다.</td>
 				</c:if>
 				<c:forEach var="jjim" items="${cblists}">
-					<td><a href="detail${fn:toUpperCase(fn:substring(jjim.video_category, 0, 1))}${fn:toLowerCase(fn:substring(jjim.video_category, 1,fn:length(jjim.video_category)))}.category?num=${jjim.video_num}"><img src="resources/images/poster/${jjim.video_image}"
-						width="200" height="200"></a></td>
+					<td>
+					<c:if test="${jjim.video_category == 'main' }">
+					<a href="detail${jjim.video_category}.wa?num=${jjim.video_num}"><img src="resources/images/poster/${jjim.video_image}"
+						width="200" height="200"></a>
+					</c:if>
+					<c:if test="${jjim.video_category != 'main' }">
+										<a href="detail${fn:toUpperCase(fn:substring(jjim.video_category, 0, 1))}${fn:toLowerCase(fn:substring(jjim.video_category, 1,fn:length(jjim.video_category)))}.category?num=${jjim.video_num}"><img src="resources/images/poster/${jjim.video_image}"
+						width="200" height="200"></a>
+					</c:if>
+						</td>
 				</c:forEach>
 			</tr>
 		</table>
