@@ -15,7 +15,7 @@
 		<if test="whatColumn=='subject'">
 			where subject like #{keyword}
 		</if>
-		order by ref desc,re_step asc
+		order by reg_date desc
 	</select>
 	
 	<select id="getTotalCount" resultType="int"
@@ -27,7 +27,7 @@
 		<if test="whatColumn=='subject'">
 			where subject like #{keyword}
 		</if>
-		order by ref desc,re_step asc
+			order by reg_date desc
 	</select>
 	
 	<select id="getOneData" resultType="MyBoard">
