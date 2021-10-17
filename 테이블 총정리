@@ -10,7 +10,7 @@ tel2 varchar2(20) not null,
 tel3 varchar2(20) not null,
 authority varchar2(20) not null
 );
-
+----1234
 drop sequence members_seq;
 create sequence members_seq
   increment by 1
