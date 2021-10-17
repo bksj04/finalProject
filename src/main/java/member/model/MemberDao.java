@@ -23,6 +23,12 @@ public class MemberDao{
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
 	
+	public List<MemberBean> selectAll() {
+		List<MemberBean> mlists=new ArrayList<MemberBean>();
+		mlists=sqlSessionTemplate.selectList(namespace+".selectAll");
+		return mlists;
+	}
+	
 	public	int idCheck(String userId) throws Exception {
 		int result = sqlSessionTemplate.selectOne(namespace + ".idCheck",userId);
 		return result;
@@ -62,6 +68,11 @@ public class MemberDao{
 		lists = sqlSessionTemplate.selectList(namespace + ".getMemberList", map, rowBounds);
 		return lists;
 	}
+	public List<MemberBean> getMemberOrderList() {
+		List<MemberBean> lists = new ArrayList<MemberBean>();
+		lists = sqlSessionTemplate.selectList(namespace + ".getMemberOrderList");
+		return lists;
+	}
 	public  int insertData(MemberBean member) {
 		return sqlSessionTemplate.insert(namespace+".insertMember", member);
 	}
@@ -96,4 +107,5 @@ public class MemberDao{
 		int cnt = sqlSessionTemplate.selectOne(namespace+".passwordCheck",mb);
 		return 0;
 	}
+	
 }

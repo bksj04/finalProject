@@ -10,6 +10,19 @@
 			values(orders_seq.nextval,#{mnum},sysdate,#{cnum})
 	</insert>
 	
+	<select id="selectAll" resultType="MyOrder">
+		select * from orders
+		<if test="whatColumn=='mnum'">
+			where mnum like #{keyword}
+		</if>
+		<if test="whatColumn=='cnum'">
+			where cnum like #{keyword}
+		</if>
+	</select>
+	
+	<update id="updateData">
+		update orders set cnum=
+	</update>
 	<!-- <insert id="insertOne">
 		insert into orders 
 		values(orders_seq.nextval,#{mnum},sysdate,#{cnum})
