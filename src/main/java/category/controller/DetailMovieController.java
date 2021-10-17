@@ -45,7 +45,6 @@ public class DetailMovieController {
 			return mav;
 		}
 		DetailBean db=ddao.detailVideoView(num);
-		System.out.println(db.getGenre()+"asdsdasd");
 		List<DetailBean> dlists = ddao.detailVideoGenre(db.getGenre());
 		List<CategoryBean> clists=cdao.selectAll();
 		List<MemberJjimBean> mjlists = mjdao.getByData(loginInfo.getId());

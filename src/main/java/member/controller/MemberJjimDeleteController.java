@@ -26,6 +26,6 @@ public class MemberJjimDeleteController {
 
 		mjdao.deleteJjim(jjim);
 
-		return getpage+"?num="+jjim.getMovie_num();
+		return getpage+"?num="+jjim.getVideo_num();
 	}
 }

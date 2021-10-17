@@ -21,6 +21,6 @@ public class MemberWatchInsertController {
 		
 		int cnt = mwdao.insertWatch(watch);
 		
-		return getPage +"?num" +watch.getMovie_num();
+		return getPage +"?num" +watch.getVideo_num();
 	}
 }

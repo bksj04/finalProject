@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ include file="../common/common.jsp" %>
+<%@include file="../display/top.jsp" %>
 <style type="text/css">
 #detailVideoWrapper{
  display: flex;
@@ -58,8 +60,6 @@
 	    }
 	  }
 </script>
-<%@ include file="../common/common.jsp" %>
-<%@include file="../display/top.jsp" %>
 <div id="detailVideoWrapper">
 	<div id="detailVideo">
 	<div class="poster">
@@ -73,17 +73,17 @@
 		</div>
 		<div>
 					<a
-				href="insertwatch.member?movie_num=${db.num}&user_id=${loginInfo.id}"><button
+				href="insertwatch.member?video_num=${db.num}&member_id=${loginInfo.id}"><button
 					name="view" class="btn btn-primary">시청하기</button></a> &nbsp;&nbsp;&nbsp;
 					
 			<c:set var="flag" value="false"/>
 			<c:forEach var="jjim" items="${mjlists }">
-			<c:if test="${jjim.movie_num == db.num }">
+			<c:if test="${jjim.video_num == db.num }">
 			<c:set var="flag" value="true"/>
 			</c:if>
 			</c:forEach>
 			<c:if test="${flag == 'true' }">
-			<a href="deletejjim.member?movie_num=${db.num}&user_id=${loginInfo.id}"><button class="btn btn-outline-danger active">
+			<a href="deletejjim.member?video_num=${db.num}&member_id=${loginInfo.id}"><button class="btn btn-outline-danger active">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 							fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
   <path
@@ -92,7 +92,7 @@
 					</button></a>
 			</c:if>
 			<c:if test="${flag == 'false' }">
-				<a href="insertjjim.member?movie_num=${db.num}&user_id=${loginInfo.id}">
+				<a href="insertjjim.member?video_num=${db.num}&member_id=${loginInfo.id}">
 					<button class="btn btn-outline-danger">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 							fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">

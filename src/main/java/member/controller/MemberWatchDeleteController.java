@@ -1,10 +1,13 @@
 package member.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import member.model.MemberBean;
 import member.model.MemberWatchDao;
 
 @Controller
@@ -17,9 +20,12 @@ public class MemberWatchDeleteController {
 	MemberWatchDao mwdao;
 	
 	@RequestMapping(value=command)
-	public String doAction(@RequestParam("num") int num) {
-		mwdao.deleteWatch();
+	public String doAction(HttpSession session) {
 		
-		return getPage+"?num="+num;
+		MemberBean loginInfo  = (MemberBean) session.getAttribute("loginInfo");
+		
+		mwdao.deleteWatch(loginInfo.getId());
+		
+		return getPage+"?num="+loginInfo.getNum();
 	}
 }

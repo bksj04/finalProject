@@ -39,7 +39,7 @@
 	</update>
 	<insert id="insertData">
 	
-	insert into board values(board_seq.nextval,#{writer},#{subject},sysdate,0,board_seq.currval,0,0,#{content})
+	insert into board values(board_seq.nextval,#{writer},#{subject},sysdate,0,#{content})
 	</insert>
 	
 	<delete id="deleteData">

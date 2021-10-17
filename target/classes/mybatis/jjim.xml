@@ -5,19 +5,19 @@
 <mapper namespace="member.model.MemberJjimBean">
 
 <insert id="insertJjim">
-	insert into jjim values(jjim_seq.nextval,#{movie_num},#{user_id})
+	insert into jjim values(jjim_seq.nextval,#{video_num},#{member_id})
 </insert>
 
 <delete id="deleteJjim">
-	delete from jjim where movie_num = #{movie_num} and user_id = #{user_id}
+	delete from jjim where video_num = #{video_num} and member_id = #{member_id}
 </delete>
 
 <select id="getByData" resultType="myJjim">
-	select * from jjim where user_id=#{user_id}
+	select * from jjim where member_id=#{member_id}
 </select>
 
 <select id="getByMydata" resultType="myJjim">
-	select v.image,v.category,j.movie_num from jjim j inner join video v on j.movie_num = v.num where j.user_id = #{user_id} 
+	select v.image as video_image,v.category as video_category,v.num as video_num from jjim j inner join video v on j.video_num = v.num where j.member_id = #{member_id} 
 </select>
 
 </mapper>

@@ -41,6 +41,7 @@ public class DetailMainController {
 		mav.addObject("dmb",dmb);
 		mav.addObject("dlists",dlists);
 		mav.addObject("clists",clists);
+		
 		mav.setViewName(getPage);
 		return mav;
 	}
