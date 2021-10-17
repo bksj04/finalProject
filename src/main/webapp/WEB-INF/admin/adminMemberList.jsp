@@ -27,7 +27,6 @@
 table {
 	margin: auto;
 	text-align: center;
-	
 }
 </style>
 <h2 style="color: #0080FF; font-weight: bold;">회원 리스트</h2>
@@ -41,6 +40,7 @@ table {
 			<th>이름</th>
 			<th>전화번호</th>
 			<th>가입일자</th>
+			<th>권한</th>
 			<th>수정</th>
 			<th>삭제</th>
 
@@ -65,11 +65,13 @@ table {
 						var="noticePostDate" pattern="yyyy-MM-dd HH:mm" /> <fmt:formatDate
 						value="${noticePostDate}" pattern="yyyy-MM-dd HH:mm" var="regdate" />
 					${regdate }</td>
+				<td>
+				${member.authority}
+				</td>
 				<td><input type="button" value="수정"
 					onClick="goUpdate(${member.num },${pageInfo.pageNumber})"></td>
 				<td><input type="button" value="삭제"
 					onClick="goDelete(${member.num },${pageInfo.pageNumber})"></td>
-
 			</tr>
 		</c:forEach>
 	</tbody>
