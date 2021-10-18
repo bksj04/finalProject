@@ -41,7 +41,7 @@ public class DetailMovieController {
 		
 		MemberBean loginInfo = (MemberBean) session.getAttribute("loginInfo");
 		if(loginInfo == null) {
-			mav.setViewName("login.member");
+			mav.setViewName("redirect:login.member");
 			return mav;
 		}
 		DetailBean db=ddao.detailVideoView(num);
