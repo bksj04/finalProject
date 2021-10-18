@@ -30,9 +30,12 @@ public class FindpwController {
 	
 	@RequestMapping(value=command, method=RequestMethod.POST)
 	public String doActionPOST(MemberBean bean, HttpServletResponse response,Model model) throws IOException {
+		
 		MemberBean loginInfo = mdao.getPW(bean.getName(),bean.getId());
+		
 		PrintWriter pw = response.getWriter();
 		response.setContentType("text/html;charset=UTF-8");
+		
 		if(loginInfo == null) {
 			pw.println("<script>alert('없는 회원입니다.');</script>");
 			pw.flush();

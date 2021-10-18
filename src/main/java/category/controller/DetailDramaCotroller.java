@@ -39,7 +39,6 @@ public class DetailDramaCotroller {
 		ModelAndView mav=new ModelAndView();
 		
 		MemberBean loginInfo = (MemberBean) session.getAttribute("loginInfo");
-		System.out.println(num+"asdd");
 		if(loginInfo == null) {
 			mav.setViewName("redirect:login.member");
 			return mav;

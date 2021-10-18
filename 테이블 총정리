@@ -290,48 +290,6 @@ insert into coupon values(coupon_seq.nextval,'','a','1234',0.4,'','2022-10-20','
 insert into coupon values(coupon_seq.nextval,'','a','1234567',0.4,'','2020-9-27','',default);
 //기간만료 케이스
 
-insert into board
-values(board_seq.nextval,'a1','a1','2015-1-1',0,1,0,0,'내용1');
-
-insert into board
-values(board_seq.nextval,'a2','a2','2015-1-1',0,2,0,0,'내용2');
-
-insert into board
-values(board_seq.nextval,'a21','a21','2015-1-1',0,2,4,1,'내용21');
-
-insert into board
-values(board_seq.nextval,'a22','a22','2015-1-1',0,2,1,1,'내용22');
-
-insert into board
-values(board_seq.nextval,'a221','a221','2015-1-1',0,2,3,2,'내용221');
-
-insert into board
-values(board_seq.nextval,'a222','a222','2015-1-1',0,2,2,2,'내용222');
-
-insert into board
-values(board_seq.nextval,'a3','a3','2015-1-1',0,7,0,0,'내용3');
-
-insert into board
-values(board_seq.nextval,'a31','a31','2015-1-1',0,7,6,1,'내용31');
-
-insert into board
-values(board_seq.nextval,'a311','a311','2015-1-1',0,7,7,2,'내용311');
-
-insert into board
-values(board_seq.nextval,'a32','a32','2015-1-1',0,7,2,1,'내용32');
-
-insert into board
-values(board_seq.nextval,'a321','a321','2015-1-1',0,7,5,2,'내용321');
-
-insert into board
-values(board_seq.nextval,'a322','a322','2015-1-1',0,7,3,2,'내용322');
-
-insert into board
-values(board_seq.nextval,'a3221','a3221','2015-1-1',0,7,4,3,'내용3221');
-
-insert into board
-values(board_seq.nextval,'a33','a33','2015-1-1',0,7,1,1,'내용33');
-
   insert into faq values(fqa_seq.nextval,'admin','구매한 쿠폰의 현금영수증을 받고싶어요','이용권/결제',sysdate,'웨이브 이용권 쿠폰을 구매 후 등록하신 경우 현금영수증을 발급받을 수 있습니다.<br>
 아래 정보와 함께 [1:1문의]를 통해 요청해주시면 발급을 도와드리겠습니다.<br>
 대상 이용권 : 이용권쿠폰, 장기 이용권쿠폰, 기프티콘 등<br>
@@ -356,6 +314,8 @@ values(board_seq.nextval,'a33','a33','2015-1-1',0,7,1,1,'내용33');
 
 이용에 참고해 주시기 바랍니다.<br>
 감사합니다.');
+
+insert into member values(members_seq.nextval,'admin','1234','관리자',sysdate,'010','3333','3333','admin');
 
 commit; 
   

@@ -2,6 +2,6 @@
     pageEncoding="UTF-8"%>
 
     <script type="text/javascript">
-	alert("${msg}");
-	location.href="detailMovie.category?num="+${video_num};
+	alert('${msg}');
+	location.href="login.member";
 	</script>

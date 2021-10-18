@@ -125,7 +125,7 @@ function openPop(){
           <a class="nav-link" href="live.wa">Live</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="mypage.member?num=${loginInfo.num}">My</a>
+          <a class="nav-link" href="mypage.member">My</a>
           </li>
                 <li class="nav-item">
           <a class="nav-link" href="list.board">자유게시판</a>

@@ -1,6 +1,11 @@
 package member.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,18 +37,23 @@ public class MemberMyPageController {
 	MemberWatchDao mwdao;
 	
 	@RequestMapping(value=command)
-	public ModelAndView doAction(@RequestParam("num")int num) {
+	public ModelAndView doAction(HttpSession session) throws IOException {
 		ModelAndView mav= new ModelAndView();
 		
-		MemberBean member = memberDao.getMember(num);
-		mav.addObject("member", member);
-
-		List<MemberJjimBean> cblists = mjdao.getByMydata(member.getId());
-		List<MemberWatchBean> wblists = mwdao.getByMydata(member.getId());
+		MemberBean loginInfo = (MemberBean) session.getAttribute("loginInfo");
+		
+		if(loginInfo == null) {
+			session.setAttribute("destination", "redirect:mypage.member");
+			mav.setViewName("alert");
+			mav.addObject("msg", "로그인을 해야합니다.");
+		}else {
+		List<MemberJjimBean> cblists = mjdao.getByMydata(loginInfo.getId());
+		List<MemberWatchBean> wblists = mwdao.getByMydata(loginInfo.getId());
 		
 		mav.addObject("cblists", cblists);
 		mav.addObject("wblists", wblists);
 		mav.setViewName(getPage);
+		}
 		return mav;
 	}
 }
