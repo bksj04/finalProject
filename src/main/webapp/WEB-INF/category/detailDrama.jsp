@@ -128,18 +128,18 @@
 	<div class="usaGenre">
 		비슷한 드라마 
 	</div>
+
 		<c:forEach var="glist" items="${dlists }">
 		<div style="display: inline-block;">
 			<div class="else">
 				<figure>
 					<c:forEach var="clist" items="${clists }">
-						<c:if test="${glist.vnum eq clist.num}">
-							<img src="resources/images/poster/${clist.image}"
-								class="poster_img" />
-						</c:if>
-					</c:forEach>
+						<c:if test="${glist.vnum eq clist.num && clist.category eq 'drama' && glist.title ne db.title}">
+							<a href="detailDrama.category?num=${clist.num}"><img src="resources/images/poster/${clist.image}"
+								class="poster_img" /></a>					
 				</figure>
 				<h4>
+				
 					<span class="icon all ir_pm"> <c:if
 							test="${glist.grade eq '18' }">
 							<img src="resources/images/icon/18.svg" class="icon_img">
@@ -150,7 +150,12 @@
 						</c:if> <c:if test="${glist.grade eq 'all' }">
 							<img src="resources/images/icon/all.svg" class="icon_img">
 						</c:if>
-					</span> <strong>${glist.title }</strong>
+					</span> 
+					<strong>					
+					<a href="detailDrama.category?num=${clist.num}">${glist.title }</a>
+					</strong>
+					</c:if>
+					</c:forEach>
 				</h4>
 			</div>
 		</div>

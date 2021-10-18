@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-usufruct.jsp<br><br>
 <style type="text/css">
 	.tt{
 	border-collapse: separate;
@@ -33,7 +32,7 @@ usufruct.jsp<br><br>
 <h6>매월 자동결제 / 부가세포함</h6>
 <br><br>
 
-wavve 이용권
+MoviePark 이용권
 방송 + LIVE + wavvie영화 + 해외시리즈
 
 <div class="dt">
@@ -109,7 +108,7 @@ wavve 이용권
 
 서비스 이용 주의사항 <br>
 
-ㆍwavve 서비스는 국내 및 해외 일부 해외 서비스 대상 국가에서 이용하실 수 있습니다. <br>
+ㆍMoviePark 서비스는 국내 및 해외 일부 해외 서비스 대상 국가에서 이용하실 수 있습니다. <br>
 
 ㆍ국내에서 결제완료된 콘텐츠에 한해 해외 서비스 대상국가 여행 시 모바일 앱(ios/Android)으로 7일간 스트리밍(재생) 서비스를 이용하실 수 있습니다.<br>
 
@@ -131,7 +130,7 @@ wavve 이용권
 
 ㆍPremium 이용권 구매 시 시범 서비스 기간동안 TV기기 (스마트TV 및 안드로이드 STB App)에서 일부 콘텐츠를 최상위 화질(UHD)로 이용하실 수 있습니다.<br>
 
-ㆍTV 사용가능 기기는 wavve앱이 설치가 되어 있거나 앱스토어에서 설치가 가능한 스마트TV 및 Android SetTopBox용 OTT이며, TV기기에서는 일부 채널은 LIVE서비스가 제공되지 않습니다.<br>
+ㆍTV 사용가능 기기는 MoviePark앱이 설치가 되어 있거나 앱스토어에서 설치가 가능한 스마트TV 및 Android SetTopBox용 OTT이며, TV기기에서는 일부 채널은 LIVE서비스가 제공되지 않습니다.<br>
 
  자세히보기<br>
 

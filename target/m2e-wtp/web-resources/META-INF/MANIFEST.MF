@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: user
+=======
+Built-By: WonSeok
+>>>>>>> ee574d90e06e0491a9ba52d34a94e63a78d1e633
 Build-Jdk: 15.0.2
 Created-By: Maven Integration for Eclipse
 
