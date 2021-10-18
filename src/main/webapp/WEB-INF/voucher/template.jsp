@@ -24,7 +24,6 @@
 		<tr valign="bottom">
 			<td><a href="pay.voucher">MoviePark이용권</a></td>
 			<td><a href="coin.voucher">쿠폰.코인</a></td>
-			<td><a href="wavveOn.voucher">웨이브온 이용권</a></td>
 		</tr>
 		
 		<tr>

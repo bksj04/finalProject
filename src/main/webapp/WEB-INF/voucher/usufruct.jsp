@@ -25,8 +25,6 @@
 	
 </script>
 
-<img src="resources/images/flyersheet.jpg" width="500" height="500" >
-
 <br><br>
 <h4>이용권을 선택해주세요.</h4>
 <h6>매월 자동결제 / 부가세포함</h6>
