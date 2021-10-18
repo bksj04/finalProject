@@ -42,10 +42,10 @@ public class DetailMainController {
 		
 		MemberBean loginInfo = (MemberBean) session.getAttribute("loginInfo");
 		if(loginInfo == null) {
-			mav.setViewName("redirect:login.member");
-			return mav;
-		}
-
+			session.setAttribute("destination", "redirect:main.wa");
+			mav.addObject("msg", "로그인을 해야합니다");
+			mav.setViewName("alert");
+		}else {
 		DetailMainBean dmb = dmdao.detailMainVideoView(num);
 		List<DetailMainBean> dlists = dmdao.detailMainVideoGenre(dmb.getGenre());
 		List<MainBean> clists = mdao.selectMainAll();
@@ -57,6 +57,7 @@ public class DetailMainController {
 		mav.addObject("mjlists",mjlists);
 		
 		mav.setViewName(getPage);
+		}
 		return mav;
 	}
 	

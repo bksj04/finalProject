@@ -36,14 +36,15 @@ public class DetailDramaCotroller {
 	
 	@RequestMapping(value=command,method=RequestMethod.GET)
 	public ModelAndView doAction(@RequestParam("num") int num,HttpSession session) {
+		
 		ModelAndView mav=new ModelAndView();
 		
 		MemberBean loginInfo = (MemberBean) session.getAttribute("loginInfo");
 		if(loginInfo == null) {
-			mav.setViewName("redirect:login.member");
-			return mav;
-		}
-		
+			session.setAttribute("destination", "redirect:drama.category");
+			mav.addObject("msg", "로그인을 해야합니다");
+			mav.setViewName("alert");
+		}else {
 		DetailBean db=ddao.detailVideoView(num);
 		List<DetailBean> dlists = ddao.detailVideoGenre(db.getGenre());
 		List<CategoryBean> clists=cdao.selectAll();
@@ -56,6 +57,7 @@ public class DetailDramaCotroller {
 		mav.addObject("mjlists", mjlists);
 		
 		mav.setViewName(getPage);
+		}
 		return mav;
 	}
 }

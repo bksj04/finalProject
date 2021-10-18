@@ -1,7 +1,10 @@
 package category.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,15 +38,16 @@ public class DetailMovieController {
 	MemberJjimDao mjdao;
 	
 	@RequestMapping(value=command,method=RequestMethod.GET)
-	public ModelAndView doAction(@RequestParam("num") int num,HttpSession session) {
+	public ModelAndView doAction(@RequestParam("num") int num,HttpSession session,HttpServletResponse response) throws IOException {
 		
 		ModelAndView mav=new ModelAndView();
 		
 		MemberBean loginInfo = (MemberBean) session.getAttribute("loginInfo");
 		if(loginInfo == null) {
-			mav.setViewName("redirect:login.member");
-			return mav;
-		}
+			session.setAttribute("destination", "redirect:movie.category");
+			mav.addObject("msg", "로그인을 해야합니다");
+			mav.setViewName("alert");
+		}else {
 		DetailBean db=ddao.detailVideoView(num);
 		List<DetailBean> dlists = ddao.detailVideoGenre(db.getGenre());
 		List<CategoryBean> clists=cdao.selectAll();
@@ -55,6 +59,7 @@ public class DetailMovieController {
 		mav.addObject("mjlists", mjlists);
 
 		mav.setViewName(getPage);
+		}
 		return mav;
 		
 	}
