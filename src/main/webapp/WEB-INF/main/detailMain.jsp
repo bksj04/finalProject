@@ -104,11 +104,11 @@
 				</c:if>
 			</div>
 			<c:choose>
-		<c:when test="${db.grade eq 'all'}">
-		<div>${db.genre } ${db.runningT }분 ${db.grade } </div>
+		<c:when test="${dmb.grade eq 'all'}">
+		<div>${dmb.genre } ${dmb.runningT }분 ${dmb.grade } </div>
 		</c:when>
 		<c:otherwise>
-		<div>${db.genre } ${db.runningT }분 ${db.grade }세 </div>
+		<div>${dmb.genre } ${dmb.runningT }분 ${dmb.grade }세 </div>
 		</c:otherwise>
 		</c:choose>
 			<hr>
@@ -138,7 +138,7 @@
 						<figure>
 							<c:forEach var="clist" items="${clists }">
 								<c:if test="${glist.vnum eq clist.num && glist.title ne dmb.title }" >
-									<a href="detailmain.wa?num=${clist.num}"><img src="resources/images/poster/${clist.image}" class="poster_img"/>	</a>							
+									<a href="detailMain.wa?num=${clist.num}"><img src="resources/images/poster/${clist.image}" class="poster_img"/>	</a>							
 						</figure>
 						<h4><span class="icon all ir_pm">
 						<c:if test="${glist.grade eq 18 }">
@@ -153,7 +153,7 @@
 						<c:if test="${glist.grade eq all }">
 						<img src="resources/images/icon/all.svg" class="icon_img">
 						</c:if>
-						</span> <strong><a href="detailmain.wa?num=${clist.num}">${glist.title }</a></strong></h4>
+						</span> <strong><a href="detailMain.wa?num=${clist.num}">${glist.title }</a></strong></h4>
 						</c:if>
 							</c:forEach>
 					</div>
