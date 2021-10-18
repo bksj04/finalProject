@@ -24,14 +24,32 @@
 	}
 </script>
 <style>
+#container {
+	height: 600px;
+
+}
 table {
 	margin: auto;
 	text-align: center;
 }
 </style>
+<div class="row" id="container">
+<div id="memberList" class="col-lg-10" align="center">
 <h2 style="color: #0080FF; font-weight: bold;">회원 리스트</h2>
-<br>
-<table class="table">
+<form action="memberList.admin" method="get">
+			<select name="whatColumn">
+				<option value="">전체 검색</option>
+				<option value="id">아이디</option>
+				<option value="name">이름</option>
+			</select> <input type="text" name="keyword"> <input type="submit"
+				value="검색">		
+				<div align="right">
+	<input type="button" class="btn btn-primary" value="회원생성"
+		onClick="goInsert()">
+</div>
+				
+		</form>
+<table border="1" align="center" width="600" class="table">
 	<thead class="table-light">
 		<tr>
 			<th>번호</th>
@@ -76,39 +94,6 @@ table {
 		</c:forEach>
 	</tbody>
 </table>
-<div align="right">
-	<input type="button" class="btn btn-primary" value="회원생성"
-		onClick="goInsert()">
-</div>
-<form action="memberList.admin" method="get">
-	<div class="row justify-content-center">
-		<div class="col-sm-2">
-			<select name="whatColumn" class="form-select">
-				<option value="all">전체 검색</option>
-				<option value="id"
-					<c:if test="${pageInfo.whatColumn == 'id'}">
-		selected
-		</c:if>>아이디</option>
-				<option value="name"
-					<c:if test="${pageInfo.whatColumn == 'name'}">
-		selected
-		</c:if>>이름</option>
-			</select>
-		</div>
-		<c:if test="${pageInfo.keyword == 'null'}">
-			<div class="col-sm-2">
-				<input type="text" class="form-control" name="keyword" value="">
-			</div>
-		</c:if>
-		<c:if test="${pageInfo.keyword != 'null'}">
-			<div class="col-sm-2">
-				<input type="text" class="form-control" name="keyword"
-					value="${pageInfo.keyword}">
-			</div>
-		</c:if>
-		<div class="col-sm-1">
-			<input type="submit" class="btn btn-primary" value="검색">
-		</div>
-	</div>
-</form>
 ${pageInfo.pagingHtml }
+</div>
+</div>

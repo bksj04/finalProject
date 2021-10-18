@@ -42,12 +42,19 @@ table{
 							</td>
 					</c:forEach>
 				</tr>
-				<tr>
-					<td>
-					<br>
+				<div align="right">
+				<c:choose>
+				<c:when test="${empty wblists }">
+						
+				</c:when>
+				<c:otherwise>
+					
+					<br>					
 					<a href="deletewatch.member"><button class="btn btn-primary">시청기록 지우기</button></a>
-								</td>
-				</tr>
+					
+				</c:otherwise>					
+				</c:choose>
+				</div>
 			</table>
 		</div>
 		<hr>

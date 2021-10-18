@@ -5,6 +5,7 @@
 #generationForm{
 	width: 600px;
 }
+
 </style>
 
 <form method="post" action="couponGeneration.admin">
