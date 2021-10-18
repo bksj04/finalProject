@@ -124,19 +124,9 @@ function openPop(){
         <li class="nav-item">
           <a class="nav-link" href="live.wa">Live</a>
         </li>
-<<<<<<< HEAD
         <li class="nav-item">
           <a class="nav-link" href="mypage.member">My</a>
           </li>
-=======
-       <c:if test="${loginInfo.name ne null and loginInfo.name ne '관리자' }" >
-          <a class="nav-link" href="mypage.member?num=${loginInfo.num}">My</a>
-       </c:if>
-        <li class="nav-item">
-        <c:if test="${loginInfo == null}" >
-          <a class="nav-link" href="login.member">My</a>
-         </c:if>
->>>>>>> 968f353112f9d76cec357895a006fd7107317926
                 <li class="nav-item">
           <a class="nav-link" href="list.board">자유게시판</a>
         </li>

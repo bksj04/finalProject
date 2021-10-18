@@ -42,12 +42,6 @@ table {
 							</c:if></td>
 					</c:forEach>
 				</tr>
-<<<<<<< HEAD
-				<tr>
-					<td><br> <a href="deletewatch.member"><button
-								class="btn btn-primary">시청기록 지우기</button></a></td>
-				</tr>
-=======
 				<div align="right">
 				<c:choose>
 				<c:when test="${empty wblists }">
@@ -61,7 +55,6 @@ table {
 				</c:otherwise>					
 				</c:choose>
 				</div>
->>>>>>> 968f353112f9d76cec357895a006fd7107317926
 			</table>
 		</div>
 		<hr>
