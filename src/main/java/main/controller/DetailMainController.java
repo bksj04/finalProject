@@ -21,8 +21,8 @@ import member.model.MemberJjimDao;
 
 @Controller
 public class DetailMainController {
-	private final String command = "/detailmain.wa";
-	private final String getPage = "detailmain";
+	private final String command = "/detailMain.wa";
+	private final String getPage = "detailMain";
 	
 	@Autowired
 	MainDao mdao;
