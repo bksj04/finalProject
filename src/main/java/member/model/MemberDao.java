@@ -107,5 +107,9 @@ public class MemberDao{
 		int cnt = sqlSessionTemplate.selectOne(namespace+".passwordCheck",mb);
 		return 0;
 	}
+	public String getByCommodity(int mnum) {
+		String commodity_name = sqlSessionTemplate.selectOne(namespace+".getByCommodity",mnum);
+		return commodity_name;
+	}
 	
 }

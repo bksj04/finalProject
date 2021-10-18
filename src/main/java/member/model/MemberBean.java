@@ -20,6 +20,8 @@ public class MemberBean {
 	@NotBlank(message="필수입력 사항입니다.")
 	private String tel3;
 	private String authority;
+	private String commodity_name;
+	
 	public int getNum() {
 		return num;
 	}

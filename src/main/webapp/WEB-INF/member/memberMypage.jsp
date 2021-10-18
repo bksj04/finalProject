@@ -9,17 +9,34 @@
 table {
 	height: 20%;
 	font-style: white;
+	width:100%;
 }
 </style>
 <%@ include file="../common/common.jsp"%>
 <%@include file="../display/top.jsp"%>
 <div id="my">
-	<table class="table table-hover">
+<div>
+			<h5>${loginInfo.name } 님</h5>
+			<hr>
+			<h5>구매한 컨텐츠</h5>
+	<table>
 		<tr>
-			<td>${loginInfo.name }님</td>
-			<td>구매한 컨텐츠</td>
+		<td></td>
+		<c:if test="${commodity_name == null}">
+			<td align=center>
+			현재 구매한 이용권이 없습니다
+			</td>
+			</c:if>
+			<c:if test="${commodity_name != null}">
+			<td align=center>
+			<font color="white">${commodity_name} 이용권을 이용 중입니다.</font>
+			</td>
+			</c:if>
+
 		</tr>
 	</table>
+	</div>
+	<hr>
 	<div align="left">
 		<h5>시청 내역</h5>
 		<div>
@@ -57,14 +74,14 @@ table {
 				</div>
 			</table>
 		</div>
-		<hr>
 	</div>
+	<hr>
 	<div align="left">
 		<h5>찜한 컨텐츠</h5>
 		<table>
 			<tr>
 				<c:if test="${empty cblists}">
-					<td>찜한 컨텐츠가 없습니다.</td>
+					<td align="center">찜한 컨텐츠가 없습니다.</td>
 				</c:if>
 				<c:forEach var="jjim" items="${cblists}">
 					<td><c:if test="${jjim.video_category == 'main' }">

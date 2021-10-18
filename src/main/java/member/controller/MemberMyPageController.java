@@ -49,7 +49,10 @@ public class MemberMyPageController {
 		}else {
 		List<MemberJjimBean> cblists = mjdao.getByMydata(loginInfo.getId());
 		List<MemberWatchBean> wblists = mwdao.getByMydata(loginInfo.getId());
+		String commodity_name = memberDao.getByCommodity(loginInfo.getNum());
+		System.out.println(commodity_name);
 		
+		mav.addObject("commodity_name", commodity_name);
 		mav.addObject("cblists", cblists);
 		mav.addObject("wblists", wblists);
 		mav.setViewName(getPage);
