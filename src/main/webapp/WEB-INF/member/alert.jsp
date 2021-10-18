@@ -3,5 +3,5 @@
 
     <script type="text/javascript">
 	alert("${msg}");
-	location.href="detailMovie.category?num="+${num};
+	location.href="detailMovie.category?num="+${video_num};
 	</script>

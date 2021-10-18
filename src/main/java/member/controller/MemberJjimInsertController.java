@@ -45,11 +45,11 @@ public class MemberJjimInsertController {
 		if(mjlists.size() > 4) {
 		msg = "찜은 5개가 최대입니다";
 		mav.addObject("msg", msg);
-		mav.addObject("num", jjim.getMovie_num());
+		mav.addObject("video_num", jjim.getVideo_num());
 		mav.setViewName("alert");
 		}else {
 		int cnt = mjdao.insertJjim(jjim);
-		mav.setViewName(getpage+"?num="+jjim.getMovie_num());
+		mav.setViewName(getpage+"?num="+jjim.getVideo_num());
 		}
 		return mav;
 }

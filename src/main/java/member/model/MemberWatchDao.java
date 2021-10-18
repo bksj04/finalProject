@@ -21,13 +21,13 @@ public class MemberWatchDao {
 		return cnt;
 	}
 
-	public List<MemberWatchBean> getByMydata(String id) {
-		List<MemberWatchBean> wblists = sqlSessionTemplate.selectList(namespace+".getByMydata",id);
+	public List<MemberWatchBean> getByMydata(String member_id) {
+		List<MemberWatchBean> wblists = sqlSessionTemplate.selectList(namespace+".getByMydata",member_id);
 		return wblists;
 	}
 
-	public void deleteWatch() {
-		sqlSessionTemplate.delete(namespace + ".deleteWatch");
+	public void deleteWatch(String member_id) {
+		sqlSessionTemplate.delete(namespace + ".deleteWatch",member_id);
 		
 	}
 }

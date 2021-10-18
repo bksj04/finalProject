@@ -45,7 +45,6 @@ public class adminMemberUpdateController {
 			@RequestParam(value="pageNumber", required=true) String pageNumber)  {
 
 		ModelAndView mav = new ModelAndView();
-
 		if(result.hasErrors()) {
 			System.out.println("에러");
 			mav.setViewName(getPage); 

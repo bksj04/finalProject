@@ -30,14 +30,22 @@ table{
 						</td>
 				</c:if>
 					<c:forEach var="watch" items="${wblists}">
-						<td><a href="detail${fn:toUpperCase(fn:substring(watch.category, 0, 1))}${fn:toLowerCase(fn:substring(watch.category, 1,fn:length(watch.category)))}.category?num=${watch.movie_num}"><img src="resources/images/poster/${watch.image}"
-							width="200" height="200"></a></td>
+						<td>
+						<c:if test="${watch.video_category == 'main' }">
+						<a href="detail${watch.video_category}.wa?num=${watch.video_num}"><img src="resources/images/poster/${watch.video_image}"
+							width="200" height="200"></a>
+						</c:if>
+						<c:if test="${watch.video_category != 'main' }">
+						<a href="detail${fn:toUpperCase(fn:substring(watch.video_category, 0, 1))}${fn:toLowerCase(fn:substring(watch.video_category, 1,fn:length(watch.video_category)))}.category?num=${watch.video_num}"><img src="resources/images/poster/${watch.video_image}"
+							width="200" height="200"></a>
+							</c:if>
+							</td>
 					</c:forEach>
 				</tr>
 				<tr>
 					<td>
 					<br>
-					<a href="deletewatch.member?num=${loginInfo.num }"><button class="btn btn-primary">시청기록 지우기</button></a>
+					<a href="deletewatch.member"><button class="btn btn-primary">시청기록 지우기</button></a>
 								</td>
 				</tr>
 			</table>
@@ -52,8 +60,16 @@ table{
 					<td>찜한 컨텐츠가 없습니다.</td>
 				</c:if>
 				<c:forEach var="jjim" items="${cblists}">
-					<td><a href="detail${fn:toUpperCase(fn:substring(jjim.category, 0, 1))}${fn:toLowerCase(fn:substring(jjim.category, 1,fn:length(jjim.category)))}.category?num=${jjim.movie_num}"><img src="resources/images/poster/${jjim.image}"
-						width="200" height="200"></a></td>
+					<td>
+					<c:if test="${jjim.video_category == 'main' }">
+					<a href="detail${jjim.video_category}.wa?num=${jjim.video_num}"><img src="resources/images/poster/${jjim.video_image}"
+						width="200" height="200"></a>
+					</c:if>
+					<c:if test="${jjim.video_category != 'main' }">
+										<a href="detail${fn:toUpperCase(fn:substring(jjim.video_category, 0, 1))}${fn:toLowerCase(fn:substring(jjim.video_category, 1,fn:length(jjim.video_category)))}.category?num=${jjim.video_num}"><img src="resources/images/poster/${jjim.video_image}"
+						width="200" height="200"></a>
+					</c:if>
+						</td>
 				</c:forEach>
 			</tr>
 		</table>

@@ -15,7 +15,7 @@
 		<if test="whatColumn=='subject'">
 			where subject like #{keyword}
 		</if>
-		order by ref desc,re_step asc
+		order by reg_date desc
 	</select>
 	
 	<select id="getTotalCount" resultType="int"
@@ -27,7 +27,7 @@
 		<if test="whatColumn=='subject'">
 			where subject like #{keyword}
 		</if>
-		order by ref desc,re_step asc
+			order by reg_date desc
 	</select>
 	
 	<select id="getOneData" resultType="MyBoard">
@@ -39,7 +39,7 @@
 	</update>
 	<insert id="insertData">
 	
-	insert into board values(board_seq.nextval,#{writer},#{subject},sysdate,0,board_seq.currval,0,0,#{content})
+	insert into board values(board_seq.nextval,#{writer},#{subject},sysdate,0,#{content})
 	</insert>
 	
 	<delete id="deleteData">

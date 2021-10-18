@@ -25,12 +25,12 @@ public class MemberJjimDao {
 		int cnt = sqlSessionTemplate.delete(namespace + ".deleteJjim",jjim);
 		return cnt;
 	}
-	public List<MemberJjimBean> getByData(String id) {
-		List<MemberJjimBean> mjlists = sqlSessionTemplate.selectList(namespace+".getByData",id);
+	public List<MemberJjimBean> getByData(String member_id) {
+		List<MemberJjimBean> mjlists = sqlSessionTemplate.selectList(namespace+".getByData",member_id);
 		return mjlists;
 	}
-	public List<MemberJjimBean> getByMydata(String id){
-		List<MemberJjimBean> cblists = sqlSessionTemplate.selectList(namespace+".getByMydata",id);
+	public List<MemberJjimBean> getByMydata(String member_id){
+		List<MemberJjimBean> cblists = sqlSessionTemplate.selectList(namespace+".getByMydata",member_id);
 		return cblists;
 	}
 }

@@ -15,6 +15,9 @@ import main.detail.DetailMainBean;
 import main.detail.DetailMainDao;
 import main.model.MainBean;
 import main.model.MainDao;
+import member.model.MemberBean;
+import member.model.MemberJjimBean;
+import member.model.MemberJjimDao;
 
 @Controller
 public class DetailMainController {
@@ -27,20 +30,32 @@ public class DetailMainController {
 	@Autowired
 	DetailMainDao dmdao;
 	
+	@Autowired
+	MemberJjimDao mjdao;
+	
 
 	
 	@RequestMapping(value=command,method=RequestMethod.GET)
-	public ModelAndView doAction(@RequestParam("num") int num) {
+	public ModelAndView doAction(@RequestParam("num") int num,HttpSession session) {
 		
 		ModelAndView mav=new ModelAndView();
-			
+		
+		MemberBean loginInfo = (MemberBean) session.getAttribute("loginInfo");
+		if(loginInfo == null) {
+			mav.setViewName("redirect:login.member");
+			return mav;
+		}
+
 		DetailMainBean dmb = dmdao.detailMainVideoView(num);
 		List<DetailMainBean> dlists = dmdao.detailMainVideoGenre(dmb.getGenre());
 		List<MainBean> clists = mdao.selectMainAll();
+		List<MemberJjimBean> mjlists = mjdao.getByData(loginInfo.getId());
 		
 		mav.addObject("dmb",dmb);
 		mav.addObject("dlists",dlists);
 		mav.addObject("clists",clists);
+		mav.addObject("mjlists",mjlists);
+		
 		mav.setViewName(getPage);
 		return mav;
 	}

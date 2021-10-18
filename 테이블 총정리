@@ -7,9 +7,10 @@ name varchar2(50) not null,
 regdate date default sysdate,
 tel1 varchar2(20) not null,
 tel2 varchar2(20) not null,
-tel3 varchar2(20) not null
+tel3 varchar2(20) not null,
+authority varchar2(20) not null
 );
-
+----1234
 drop sequence members_seq;
 create sequence members_seq
   increment by 1
@@ -59,9 +60,6 @@ create table board(
    subject varchar2(20) not null,
    reg_date date not null,
    readcount int default 0,
-   ref number not null,
-   re_step number not null,
-   re_level number not null,
    content varchar2(1000) not null
 );
 drop sequence board_seq;
@@ -121,9 +119,9 @@ create sequence watch_seq
 drop table watch;
 create table watch(
 num number not null,
-movie_num number not null,
-user_id varchar2(30) not null,
-watch_date date
+video_num number not null,
+member_id varchar2(30) not null,
+watchdate date
 );
 
 drop sequence jjim_seq;
@@ -137,8 +135,8 @@ create sequence jjim_seq
 drop table jjim;
 create table jjim(
 num number not null,
-movie_num number not null,
-user_id varchar2(30) not null
+video_num number not null,
+member_id varchar2(30) not null
 );
 
 drop sequence commodity_seq;

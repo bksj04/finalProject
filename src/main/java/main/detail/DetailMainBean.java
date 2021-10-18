@@ -12,9 +12,8 @@ public class DetailMainBean {
 	private String actor;
 	private String day;
 	private int series;
-	private String video;
 	private String grade;
-	
+	private String image;
 	public int getNum() {
 		return num;
 	}
@@ -75,16 +74,16 @@ public class DetailMainBean {
 	public void setSeries(int series) {
 		this.series = series;
 	}
-	public String getVideo() {
-		return video;
-	}
-	public void setVideo(String video) {
-		this.video = video;
-	}
 	public String getGrade() {
 		return grade;
 	}
 	public void setGrade(String grade) {
 		this.grade = grade;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
 	}
 }
