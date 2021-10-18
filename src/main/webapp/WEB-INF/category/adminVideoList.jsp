@@ -48,7 +48,7 @@ table {
 				<option value="num">번호</option>
 				<option value="title">제목</option>
 			</select> <input type="text" name="keyword">
-			 <input type="submit" value="검색">
+			 <input type="submit" class="btn btn-primary" value="검색">
 			<div align="right">
 				<input type="button" class="btn btn-primary" value="게시물추가"
 					onClick="videoInsert()">
@@ -84,9 +84,9 @@ table {
 						<td>${video.grade }</td>
 						<td><img src="resources/images/poster/${video.image }"
 							width="25px;" height="25px;"></td>
-						<td><input type="button" value="수정"
+						<td><input type="button" value="수정" class="btn btn-primary"
 							onClick="goUpdate(${video.num },${pageInfo.pageNumber})"></td>
-						<td><input type="button" value="삭제"
+						<td><input type="button" value="삭제" class="btn btn-primary"
 							onClick="goDelete(${video.num },${pageInfo.pageNumber})"></td>
 					</tr>
 				</c:forEach>

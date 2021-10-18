@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <%@include file="./../common/common.jsp"%>
 
 <script type="text/javascript">
@@ -24,10 +25,7 @@
 	}
 </script>
 <style>
-#container {
-	height: 600px;
 
-}
 table {
 	margin: auto;
 	text-align: center;
@@ -41,7 +39,7 @@ table {
 				<option value="">전체 검색</option>
 				<option value="id">아이디</option>
 				<option value="name">이름</option>
-			</select> <input type="text" name="keyword"> <input type="submit"
+			</select> <input type="text" name="keyword"> <input type="submit" class="btn btn-primary"
 				value="검색">		
 				<div align="right">
 	<input type="button" class="btn btn-primary" value="회원생성"
