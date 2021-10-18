@@ -14,6 +14,14 @@ public class DetailMainBean {
 	private int series;
 	private String grade;
 	private String image;
+	private String category;
+	
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
 	public int getNum() {
 		return num;
 	}
