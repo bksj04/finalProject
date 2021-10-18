@@ -23,10 +23,10 @@ public class PayController {
 	
 	@RequestMapping(value=command,method =RequestMethod.GET )
 	public ModelAndView doAction(HttpSession session,HttpServletResponse response,HttpServletRequest request) throws IOException {
-		System.out.println(1234);
 		
 		PrintWriter pw = response.getWriter();
 		request.setCharacterEncoding("UTF-8");
+		
 		ModelAndView mav = new ModelAndView();
 		
 		MemberBean loginInfo = null;

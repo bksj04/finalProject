@@ -33,4 +33,8 @@
 	<insert id="setInsertDetail" >
 		insert into orderdetails values(orderdetails_seq.nextval,#{onum},#{cnum})
 	</insert> -->
+	
+	<select id="getOneData" resultType="MyOrder">
+	select * from orders where mnum=#{mnum}
+	</select>
 </mapper>

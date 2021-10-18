@@ -1,5 +1,7 @@
 package voucher.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +11,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import commodity.model.CommodityBean;
 import commodity.model.CommodityDao;
+import member.model.MemberBean;
+import order.model.OrderBean;
+import order.model.OrderDao;
 
 @Controller
 public class PaymentController {
@@ -19,13 +24,20 @@ public class PaymentController {
 	@Autowired(required = false)
 	CommodityDao cdao;
 	
+	@Autowired
+	OrderDao odao;
+	
 	@RequestMapping(value=command,method=RequestMethod.GET)
-	public ModelAndView doAction(@RequestParam("num") int num) {
+	public ModelAndView doAction(@RequestParam("num") int num,HttpSession session) {
 		
-		System.out.println(num);
+		MemberBean loginInfo = (MemberBean) session.getAttribute("loginInfo");
+		
+		OrderBean ob = odao.getOneData(loginInfo.getNum());
 		CommodityBean cb=cdao.selectMember(num);
 		
 		ModelAndView mav=new ModelAndView();
+		
+		
 		mav.addObject("cb",cb);
 		mav.setViewName(getPage);
 		return mav;

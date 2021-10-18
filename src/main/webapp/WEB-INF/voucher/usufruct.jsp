@@ -19,8 +19,12 @@
 		 /* document.getElementById('result').innerText = 
 			    event.target.value; */
 	}
-	function paymentSet(){
-		
+	function paymentSet(cnum,mnum){
+		if(cnum == 0){
+			alert("이용권을 선택해주세요");
+		}else{
+		    window.open("paymentSet.voucher?cnum="+cnum+"&mnum="+mnum, "결제창", "width=700px,height=800px,scrollbars=yes");
+		}
 	}
 	
 </script>
@@ -97,7 +101,7 @@ MoviePark 이용권
 		</div>
 	</div>
 	<div>
-		<input type="button" value="결제하기" onclick="location.href='paymentSet.voucher?cnum='+${cb.num}+'&mnum='+${loginInfo.num}">
+		<input type="button" value="결제하기" onclick="paymentSet('${cb.num}','${loginInfo.num}')">
 	</div>
 </div>
 </div>

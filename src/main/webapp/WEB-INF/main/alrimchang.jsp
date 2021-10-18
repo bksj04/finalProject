@@ -16,7 +16,7 @@
 
 	<c:if test="${empty lists}">
 		<tr align="center">
-			<td colspan="8"><img src="resources/images/다운로드.png"> <br>
+			 <td>
 			알림이 없습니다.</td>
 		</tr>
 	</c:if>

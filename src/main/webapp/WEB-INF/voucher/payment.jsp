@@ -3,7 +3,6 @@
 <%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <script type="text/javascript">
 	function selectCard(){
 		alert("!");
@@ -35,7 +34,6 @@ payment.jsp<br><Br>
 	
 	SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일");
 %>
-
 <div>
 	<form action="order.voucher?cnum=${cb.num }&mnum=${loginInfo.num}" method="post">
 		<div id="top">

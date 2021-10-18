@@ -14,7 +14,7 @@ import order.model.OrderDao;
 public class OrderController {
 	
 	private final String command="/order.voucher";
-	private final String getPage="payMain";
+	private final String getPage="paymentComplete";
 	
 	@Autowired(required=false)
 	OrderDao odao;
@@ -25,9 +25,6 @@ public class OrderController {
 	public ModelAndView doAction(@RequestParam("cnum") int cnum,
 			@RequestParam("mnum") int mnum) {
 		
-		
-		System.out.println(cnum);
-		System.out.println(mnum);
 		ob.setCnum(cnum);
 		ob.setMnum(mnum);
 		
