@@ -9,6 +9,7 @@ public class MemberWatchBean {
 	
 	private String video_image;
 	private String video_category;
+	
 	public int getNum() {
 		return num;
 	}

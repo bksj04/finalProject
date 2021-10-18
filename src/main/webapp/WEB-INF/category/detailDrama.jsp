@@ -73,7 +73,7 @@
 		</div>
 		<div>
 					<a
-				href="insertwatch.member?video_num=${db.num}&member_id=${loginInfo.id}"><button
+				href="play.video?video_num=${db.num}&member_id=${loginInfo.id}&video_image=${db.image}"><button
 					name="view" class="btn btn-primary">시청하기</button></a> &nbsp;&nbsp;&nbsp;
 					
 			<c:set var="flag" value="false"/>
