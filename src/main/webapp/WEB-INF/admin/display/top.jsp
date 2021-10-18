@@ -12,7 +12,7 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="main.wa">MoviePark</a>
+        <a class="nav-link" href="main.wa"><img src="resources/images/logo.png" width="160" height="85" /></a>
       </div>
     </div>
   </div>

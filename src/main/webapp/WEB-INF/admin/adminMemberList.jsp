@@ -68,9 +68,9 @@ table {
 				<td>
 				${member.authority}
 				</td>
-				<td><input type="button" value="수정"
+				<td><input type="button" class="btn btn-primary" value="수정"
 					onClick="goUpdate(${member.num },${pageInfo.pageNumber})"></td>
-				<td><input type="button" value="삭제"
+				<td><input type="button" class="btn btn-primary" value="삭제"
 					onClick="goDelete(${member.num },${pageInfo.pageNumber})"></td>
 			</tr>
 		</c:forEach>

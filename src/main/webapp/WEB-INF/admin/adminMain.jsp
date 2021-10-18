@@ -59,7 +59,6 @@
 				<%@include file="adminCouponGeneration.jsp"%>
 			</c:if>
 			<c:if test="${pageType == 'main' }">
-			<img src="resources/images/logo.png" width="500" height="300">
 			</c:if>
 		</div>
 	</div>
