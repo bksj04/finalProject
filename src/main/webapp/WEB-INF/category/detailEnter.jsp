@@ -96,7 +96,14 @@
 				</a>
 			</c:if>
 		</div>
+		<c:choose>
+		<c:when test="${db.grade eq 'all'}">
+		<div>${db.genre } ${db.runningT }분 ${db.grade } </div>
+		</c:when>
+		<c:otherwise>
 		<div>${db.genre } ${db.runningT }분 ${db.grade }세 </div>
+		</c:otherwise>
+		</c:choose>
 		<div>
 		<hr>
 			<span id="toggle" onclick="openCloseToc()">더보기</span>

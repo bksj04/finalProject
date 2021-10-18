@@ -10,7 +10,7 @@ table {
 </style>
 <h2 style="color: #0080FF; font-weight: bold;">쿠폰 리스트</h2>
 <br>
-<table class="table">
+<table border="1" align="center" width="600" class="table">
 	<thead class="table-light">
 		<tr>
 			<th scope="col">No</th>

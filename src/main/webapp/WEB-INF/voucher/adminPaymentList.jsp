@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-adminPaymentList.jsp<br><br>
 
 <%@include file="../admin/display/top.jsp"%>
 <%@include file="./../common/common.jsp"%>
@@ -21,12 +20,6 @@ adminPaymentList.jsp<br><br>
 	height: 600px;
 }
 
-#memberList {
-	text-align: center;
-	height: 100%;
-	border: 1px solid black;
-	padding: 100px;
-}
 
 table {
 	margin: auto;
@@ -37,14 +30,14 @@ table {
 	<div class="col-lg-2">
 		<%@include file="../admin/display/left.jsp"%>
 	</div>
-	<div id="videoList" class="col-lg-10" align="center">
+	<div id="paymentList" class="col-lg-10" align="center">
 		<h2 style="color: #0080FF; font-weight: bold;">상품 구매자 리스트</h2>
-		<form action="videoList.member" method="get">
+		<form action="paymentList.voucher" method="get">
 			<select name="whatColumn">
 				<option value="">전체 검색</option>
-				<option value="id">번호</option>
-				<option value="name">제목</option>
-			</select> <input type="text" name="keyword"> <input type="submit"
+				<option value="id">아이디</option>
+				<option value="name">이름</option>
+			</select> <input type="text" name="keyword"> <input type="submit" class="btn btn-primary"
 				value="검색">
 			<div align="right">
 				<input type="button" class="btn btn-primary" value="게시물추가"
@@ -87,8 +80,8 @@ table {
 								</c:if>
 							</c:forEach>
 						</td>
-						<td><input type="button" value="수정" 
-						onclick="goUpdate(${mlist.num },${pageInfo.pageNumber})""></td>
+						<td><input type="button" value="수정" class="btn btn-primary"
+						onclick="goUpdate(${mlist.num },${pageInfo.pageNumber})"></td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -46,6 +46,12 @@ select * from members where name = #{name} and id = #{id}
 	
 	<select id="getMemberOrderList" resultType="MyMember">
 		select * from members
+		<if test="whatColumn=='id'">
+			where id like #{keyword}
+		</if>
+		<if test="whatColumn=='name'">
+			where name like #{keyword}
+		</if>
 	</select>
 	
 	<select id="getMember" resultType="MyMember">
