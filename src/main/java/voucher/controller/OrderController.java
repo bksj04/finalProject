@@ -33,7 +33,6 @@ public class OrderController {
 		
 		ModelAndView mav=new ModelAndView();
 		if(cnt>0) {
-			
 			mav.setViewName(getPage);
 		}
 		return mav;

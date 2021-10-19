@@ -2,5 +2,7 @@
     pageEncoding="UTF-8"%>
 
     <script type="text/javascript">
-    window.close();
+    opener.document.location.href="main.wa";
+
+		self.close();
 	</script>
