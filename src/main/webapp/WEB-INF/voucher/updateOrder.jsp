@@ -43,9 +43,9 @@ td{
 		<div >
 			<h2 style="color:#0080FF; font-weight: bold;">회원 이용권 수정창</h2>	
 			<div>
-				<form action="updateOrder.voucher" method="post" >
+				<form action="updateOrderCommodity.voucher" method="post" >
 					<input type="hidden" name="pageNumber" value="${pageNumber}" >
-					<input type="hidden" name="num" value="${cb.num}">
+					<input type="hidden" name="num" value="${mb.num}">
 					<fieldset>
 			<div class="form-group">
 				<label for="name" class="form-label mt-4">회원 이름</label>

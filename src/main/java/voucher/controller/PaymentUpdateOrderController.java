@@ -17,7 +17,6 @@ public class PaymentUpdateOrderController {
 	
 	private final String command="/updateOrder.voucher";
 	private final String getPage="updateOrder";
-	private final String gotoPage="redirect:/paymentList.voucher";
 	@Autowired(required = false)
 	OrderDao odao;
 	
@@ -40,20 +39,5 @@ public class PaymentUpdateOrderController {
 		return mav;
 	}
 	
-	@RequestMapping(value=command ,method = RequestMethod.POST)
-	public ModelAndView gotoPage(@RequestParam("commodity") int commodity,
-			@RequestParam("num") int num,
-			@RequestParam("pageNumber")int pageNumber) {
-		
-		OrderBean ob=new OrderBean();
-		ob.setMnum(num);
-		ob.setCnum(commodity);
-		
-		odao.updateData(ob);
-		
-		ModelAndView mav=new ModelAndView();
-		mav.addObject("pageNumber",pageNumber);
-		mav.setViewName(gotoPage);
-		return mav;
-	}
+	
 }
