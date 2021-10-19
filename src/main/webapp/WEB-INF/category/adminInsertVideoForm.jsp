@@ -4,10 +4,12 @@
 <%@include file="./../common/common.jsp"%>
 
 
-<script type="text/javascript">
-	
-</script>
 <style>
+.err{
+		font-size: 13pt;
+		color: red;
+		font-weight: bold;
+		}
 #container{
 height: 600px;
 }
@@ -42,11 +44,12 @@ td{
 		<div>
 			<h2 style="color:#0080FF; font-weight: bold;">영상 게시물 추가창</h2>	
 			<div>
-				<form action="adminInsertVideo.category" method="post" enctype="multipart/form-data">
+			<form:form commandName ="categoryBean" action="adminInsertVideo.category" method="post" enctype="multipart/form-data">
 					<fieldset>
 			<div class="form-group">
 			<label for="title" class="form-label mt-4">제목</label>
 				<input type="text" class="form-control" name="title" placeholder="제목 입력" >
+				<form:errors cssClass="err" path="title" />
 			</div>
 		<div class="form-group">
 				<label for="category" class="form-label mt-4">카테고리</label>
@@ -54,18 +57,21 @@ td{
 				<input type="radio" name="category" value="drama">드라마
 				<input type="radio" name="category" value="enter">예능
 				<input type="radio" name="category" value="ani">만화
+				<form:errors cssClass="err" path="category" />
 			</div>
 			<div class="form-group">
 				<label for="name" class="form-label mt-4">시청 연령 제한</label>
 				<select name="grade">
+					<option value="">선택
 					<option value="18">18
 					<option value="15">15
 					<option value="12">12
 					<option value="all">all
 				</select>
+					<form:errors cssClass="err" path="grade" />
 			</div>
 			<div>
-				<input type="file" name="file">
+				<input type="file" id="file">
 			</div>
 		</fieldset>
 		<br><br>
@@ -73,7 +79,7 @@ td{
 			<input type="submit" class="btn btn-primary" value="다음">
 			<input type="button" class="btn btn-primary" onclick="history.go(-1);" value="취소">
 			</div>
-				</form>
+				</form:form>
 			</div>
 		</div>
 	</div>

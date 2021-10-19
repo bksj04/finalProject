@@ -3,9 +3,11 @@ package category.controller;
 import java.io.File;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,9 +38,15 @@ public class AdminInsertVideoController {
 	}
 	
 	@RequestMapping(value=command,method = RequestMethod.POST)
-	public ModelAndView doAction(@RequestParam("file") MultipartFile file,CategoryBean cb,HttpServletRequest request) {
+	public ModelAndView doAction( @Valid CategoryBean cb,BindingResult result,HttpServletRequest request,@RequestParam("file") MultipartFile file
+			) {
 		
-		ModelAndView mav=new ModelAndView();
+		ModelAndView mav=new ModelAndView();	
+		if(result.hasErrors()) {
+			System.out.println("에러.");
+			mav.setViewName(getPage);
+			return mav;
+		}
 		String category=cb.getCategory();
 		System.out.println(cb.getGrade());
 		System.out.println(cb.getCategory());
@@ -57,8 +65,10 @@ public class AdminInsertVideoController {
 	    }  
 	    cb.setImage(filename);
 	    System.out.println(filename);
+	    
 	    int cnt = cdao.InsertVideo(cb);
 	    CategoryBean ncb=cdao.selectTitle(cb.getTitle());
+	    
 	    if(cnt>0) {
 	    	System.out.println(ncb.getNum());
 	    	mav.addObject("cb",ncb);
@@ -73,11 +83,18 @@ public class AdminInsertVideoController {
 	DetailDao ddao;
 	
 	@RequestMapping(value="/adminLastInsertVideo.category",method=RequestMethod.POST)
-	public ModelAndView goPage(DetailBean db) {
-		
+	public ModelAndView goPage(@Valid DetailBean db,BindingResult result,CategoryBean cb) {
+		ModelAndView mav=new ModelAndView();
+		System.out.println("에러러");
+		CategoryBean ncb=cdao.selectTitle(cb.getTitle());
+		if(result.hasErrors()) {
+			mav.addObject("cb",ncb);
+			System.out.println("에러2.");
+			mav.setViewName(goPage);
+			return mav;
+		}
 		ddao.InsertVideo(db);
 		
-		ModelAndView mav=new ModelAndView();
 		mav.setViewName("redirect:/videoList.category");
 		return mav;
 	}

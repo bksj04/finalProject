@@ -1,20 +1,31 @@
 package category.detail;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Range;
+
 public class DetailBean {
 	
 	private int num;
 	private int vnum;
 	private String title;
+	@NotBlank(message = "줄거리를 입력해주세요")
 	private String content;
+	@Range(min = 1,max = 1000,message = "러닝타임을 입력하세요")
 	private int runningT;
+	@NotBlank(message = "장르를 입력해주세요")
 	private String genre;
+	@NotBlank(message = "제작국가를 입력해주세요")
 	private String nation;
+	@NotBlank(message = "출연배우를 입력해주세요")
 	private String actor;
 	private String grade;
+	@NotBlank(message = "방영일을 입력해주세요")
 	private String day;
+	@Range(min = 1,max = 1000,message = "제작화수를 입력하세요")
 	private int series;
-	private String video;
-	
+	private String video;	
 	private String image;
 	private String category;
 	

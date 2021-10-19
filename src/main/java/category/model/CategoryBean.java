@@ -1,12 +1,19 @@
 package category.model;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class CategoryBean {
 	
 	private int num;
+	@NotBlank(message = "제목을 입력해주세요")
 	private String title;
+	@NotBlank(message = "카테고리를 선택해주세요")
 	private String category;
+	@NotBlank(message = "시청연령을 선택해주세요")
 	private String grade;
 	private String image;
 	private MultipartFile upload;
