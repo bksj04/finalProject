@@ -15,12 +15,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import category.model.CategoryBean;
+import commodity.model.CommodityBean;
+import commodity.model.CommodityDao;
 import member.model.MemberBean;
 import member.model.MemberDao;
 import member.model.MemberJjimBean;
 import member.model.MemberJjimDao;
 import member.model.MemberWatchBean;
 import member.model.MemberWatchDao;
+import order.model.OrderBean;
+import order.model.OrderDao;
 
 @Controller
 public class MemberMyPageController {
@@ -35,6 +39,12 @@ public class MemberMyPageController {
 	
 	@Autowired
 	MemberWatchDao mwdao;
+	
+	@Autowired(required = false)
+	OrderDao odao;
+	
+	@Autowired(required = false)
+	CommodityDao cdao;
 	
 	@RequestMapping(value=command)
 	public ModelAndView doAction(HttpSession session) throws IOException {
@@ -51,7 +61,12 @@ public class MemberMyPageController {
 		List<MemberWatchBean> wblists = mwdao.getByMydata(loginInfo.getId());
 		String commodity_name = memberDao.getByCommodity(loginInfo.getNum());
 		
+		OrderBean ob=odao.getOneData(loginInfo.getNum());
+		System.out.println("ob.getCnum() : "+ob.getCnum());
+		CommodityBean cb=cdao.selectMember(ob.getCnum());
+		System.out.println("cb.getContent() : " +cb.getContent());
 		mav.addObject("commodity_name", commodity_name);
+		mav.addObject("cb",cb);
 		mav.addObject("cblists", cblists);
 		mav.addObject("wblists", wblists);
 		mav.setViewName(getPage);
