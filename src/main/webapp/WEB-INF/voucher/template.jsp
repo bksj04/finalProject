@@ -26,7 +26,7 @@
 		</div>
 		
 		<div>
-			<div style="vertical-align: middle;">
+			<div >
 					<jsp:include page="<%=contentPage %>"/>
 			</div>
 		</div>

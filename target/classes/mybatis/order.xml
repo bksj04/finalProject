@@ -21,7 +21,7 @@
 	</select>
 	
 	<select id="getOneData" resultType="MyOrder">
-		select * from order where mnum=#{mnum}
+		select * from orders where mnum=#{mnum}
 	</select>
 	
 	<update id="updateData">
