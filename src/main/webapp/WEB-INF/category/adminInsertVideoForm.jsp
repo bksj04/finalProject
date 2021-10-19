@@ -4,6 +4,9 @@
 <%@include file="./../common/common.jsp"%>
 
 
+<script type="text/javascript">
+	
+</script>
 <style>
 .err{
 		font-size: 13pt;
@@ -44,12 +47,12 @@ td{
 		<div>
 			<h2 style="color:#0080FF; font-weight: bold;">영상 게시물 추가창</h2>	
 			<div>
-			<form:form commandName ="categoryBean" action="adminInsertVideo.category" method="post" enctype="multipart/form-data">
+				<form:form commandName ="categoryBean" action="adminInsertVideo.category" method="post" enctype="multipart/form-data">
 					<fieldset>
 			<div class="form-group">
 			<label for="title" class="form-label mt-4">제목</label>
 				<input type="text" class="form-control" name="title" placeholder="제목 입력" >
-				<form:errors cssClass="err" path="title" />
+				<form:errors cssClass="err" path="title" />			
 			</div>
 		<div class="form-group">
 				<label for="category" class="form-label mt-4">카테고리</label>
@@ -68,10 +71,11 @@ td{
 					<option value="12">12
 					<option value="all">all
 				</select>
-					<form:errors cssClass="err" path="grade" />
+				<form:errors cssClass="err" path="grade" />
 			</div>
 			<div>
-				<input type="file" id="file">
+				<input type="file" name="file">
+				
 			</div>
 		</fieldset>
 		<br><br>
