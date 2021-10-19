@@ -23,6 +23,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="noticeList.admin">공지사항</a></li>
             <li><a class="dropdown-item" href="faqList.admin">자주묻는질문</a></li>
+            <li><a class="dropdown-item" href="qnaList.admin">QnA</a></li>
           </ul>
         </li>
 </ul>

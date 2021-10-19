@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cs.model.CsQnABean">
+
+<insert id="writeQuestions">
+insert into qna values(qna_seq.nextval,#{writer},#{subject},qna_seq.currval,0,sysdate,#{content})
+</insert>
+
+<select id="getAllData" resultType="MyCsQnA"
+		parameterType="hashmap">
+		select * from qna
+		<if test="whatColumn=='writer'">
+			where writer like #{keyword}
+		</if>
+		<if test="whatColumn=='subject'">
+			where subject like #{keyword}
+		</if>
+		order by ref desc,re_level asc
+	</select>
+	
+	<select id="getTotalCount" resultType="int"
+		parameterType="hashmap">
+		select count(*) from qna
+		<if test="whatColumn=='writer'">
+			where writer like #{keyword}
+		</if>
+		<if test="whatColumn=='subject'">
+			where subject like #{keyword}
+		</if>
+		order by ref desc,re_level asc
+	</select>
+	
+	<select id="getOneData" resultType="MyCsQnA">
+	select * from qna where num = #{num}
+	</select>
+	
+	<insert id="writeAnswer">
+	insert into qna values(qna_seq.nextval,#{writer},#{subject},#{ref},1,sysdate,#{content})
+	</insert>
+</mapper>

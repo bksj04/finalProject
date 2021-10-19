@@ -210,6 +210,24 @@ increment by 1
   minvalue 1
   maxvalue 10000
   nocache;
+  
+   drop table qna CASCADE CONSTRAINTS;
+create table qna(
+   num number primary key,
+   writer varchar2(20) references members(id) on delete cascade not null,
+   subject varchar2(50) not null,
+   ref int not null,
+   re_level int not null,
+   reg_date date default sysdate not null,
+   content varchar2(1000) not null
+);
+drop sequence qna_seq;
+create sequence qna_seq
+  increment by 1
+  start with 1
+  minvalue 1
+  maxvalue 10000
+  nocache;
  
   -------------------------------------------------------------------------------------
   insert into members values(members_seq.nextval,'admin','1234','°ü¸®ÀÚ',sysdate,'010','1111','1111','admin');

@@ -56,7 +56,7 @@ $(document).ready(function(){
    </c:if>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-bs-toggle="tab" href="#user_qna_div"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1:1 문의</font></font></a>
+    <a class="nav-link" data-bs-toggle="tab" href="#qna_div"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1:1 문의</font></font></a>
   </li>
     <li class="nav-item">
     <a class="nav-link" data-bs-toggle="tab" href="#agreement_div"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">이용약관</font></font></a>
@@ -85,8 +85,8 @@ $(document).ready(function(){
 </c:if>
   </div>
   </c:if>
-  <div class="tab-pane fade" id="user_qna_div">
-    <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1:1문의</font></font></p>
+  <div class="tab-pane fade" id="qna_div">
+    <input type="button" class="btn btn-primary btn-lg" value="1:1문의하기" onclick="location.href='QnA.cs'">
   </div>
   <div class="tab-pane fade" id="agreement_div">
 	<%@include file="CsAgreement.jsp" %>

@@ -58,6 +58,15 @@
 			<c:if test="${pageType == 'couponGeneration' }">
 				<%@include file="adminCouponGeneration.jsp"%>
 			</c:if>
+			<c:if test="${pageType == 'qnaList' }">
+				<%@include file="adminCsQnAList.jsp"%>
+			</c:if>
+			<c:if test="${pageType == 'qnaDetailView' }">
+				<%@include file="adminQnADetailView.jsp"%>
+			</c:if>
+			<c:if test="${pageType == 'qnaAnswerForm' }">
+				<%@include file="adminQnAAnswerForm.jsp"%>
+			</c:if>
 			<c:if test="${pageType == 'main' }">
 			</c:if>
 		</div>

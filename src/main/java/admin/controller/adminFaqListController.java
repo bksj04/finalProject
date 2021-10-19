@@ -31,7 +31,7 @@ public class adminFaqListController {
 			@RequestParam(value="keyword",required = false) String keyword,
 			@RequestParam(value="pageNumber", required = false) String pageNumber,
 			@RequestParam(value="pageSize", required = false) String pageSize,
-			HttpServletRequest request,HttpSession session) {
+			HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 		Map<String,String> map = new HashMap<String,String>();
 		map.put("whatColumn", whatColumn); // whatColumn=title
@@ -41,7 +41,6 @@ public class adminFaqListController {
 		String url = request.getContextPath()+command; 
 		Paging pageInfo = new Paging(pageNumber,pageSize,totalCount,url,whatColumn,keyword, null);
 		
-
 		List<CsFaqBean> lists_faq = cfDao.getAllData(pageInfo,map);
 		mav.addObject("lists_faq", lists_faq);
 		mav.addObject("pageInfo", pageInfo);

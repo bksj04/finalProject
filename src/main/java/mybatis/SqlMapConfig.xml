@@ -20,6 +20,7 @@
 		<typeAlias type="member.model.MemberJjimBean" alias="MyJjim"/>
 		<typeAlias type="member.model.MemberWatchBean" alias="MyWatch"/>
 		<typeAlias type="order.model.OrderBean" alias="MyOrder"/>
+		<typeAlias type="cs.model.CsQnABean" alias="MyCsQnA"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/member.xml"/>
@@ -36,5 +37,6 @@
 		<mapper resource="mybatis/jjim.xml" />
 		<mapper resource="mybatis/watch.xml" />
 		<mapper resource="mybatis/order.xml" />
+		<mapper resource="mybatis/qna.xml" />
 	</mappers>
 </configuration>
