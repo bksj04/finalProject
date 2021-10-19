@@ -38,8 +38,9 @@ public class OrderDao {
 	public void updateData(OrderBean ob) {
 		sqlSessionTemplate.update(namespace+".updateData",ob);
 	}
-	public void getOneData(int mnum) {
-		sqlSessionTemplate.selectOne(namespace+".getOneData",mnum);
+	public OrderBean getOneData(int mnum) {
+		OrderBean ob=sqlSessionTemplate.selectOne(namespace+".getOneData",mnum);
+		return ob;
 	}
 	
 	public int OrderCheck(int mnum) {
