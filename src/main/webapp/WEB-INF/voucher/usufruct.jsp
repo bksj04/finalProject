@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script type="text/javascript" src="/resource/script/web/common/jquery-1.9.1.min.js"></script>
+	
 <style type="text/css">
 	.tt{
 	border-collapse: separate;
@@ -12,11 +14,14 @@
 	vertical-align:middle;
 	}
 	.t1{
+	
+	text-align: left;
 	height: 50px;
 	background-color: gray;
 	border-radius: 5px;
 	margin: 5px;
 	font-size: 25px;
+	color: white; 
 	}
 	
 </style>
@@ -44,29 +49,34 @@
 <h4>이용권을 선택해주세요.</h4>
 <h6>매월 자동결제 / 부가세포함</h6>
 <br><br>
-
+<h5>
 MoviePark 이용권
 방송 + LIVE + wavvie영화 + 해외시리즈
+</h5>
+<div class="product_purchase">
+	
 
-<div class="dt" >
+				</div>
+			</div>
+<div class="dt" align="center" >
 <div class="tt">
 	<div class="t1">
 		<div >
-			<input type="radio" name="paymemt" value=1 <c:if test="${cb.num eq 1 }">checked</c:if>
+			<input type="radio" class="form-check-input" name="paymemt" value=1 <c:if test="${cb.num eq 1 }">checked</c:if>
 			 onclick="readyPay(this.value)" style="vertical-align: middle;" >
 			Basic 동시시청 1회선,HD화질,모바일+PC 7900원<BR>
 		</div>
 	</div>
 	<div class="t1">
 		<div>
-			<input type="radio" name="paymemt" value=2 <c:if test="${cb.num eq 2 }">checked</c:if>
+			<input type="radio" name="paymemt" class="form-check-input" value=2 <c:if test="${cb.num eq 2 }">checked</c:if>
 			 onclick="readyPay(this.value)">
 			Standard 동시시청 2회선,FHD화질,전체 디바이스 10900원<BR>
 		</div>
 	</div >
 	<div class="t1">
 		<div>
-			<input type="radio" name="paymemt" value=3 <c:if test="${cb.num eq 3 }">checked</c:if>
+			<input type="radio" name="paymemt" class="form-check-input" value=3 <c:if test="${cb.num eq 3 }">checked</c:if>
 			 onclick="readyPay(this.value)">
 			Premium 동시시청 4회선,최고화질,전체 디바이스 13900원
 		</div>
@@ -74,30 +84,36 @@ MoviePark 이용권
 </div>
 <br><Br>
 
-제휴 이용권
+<h5>제휴 이용권</h5>
 <div class="tt">
 	<div class="t1">
 		<div>
-			<input type="radio" name="paymemt" value=4  <c:if test="${cb.num eq 4 }">checked</c:if>
-			onclick="readyPay(this.value)">
-			Basic X FLO 무제한 동시시청 1회선,HD화질,모바일+PC 13750원<BR>
+			<fieldset class="form-group">
+      
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="paymemt" value="4" <c:if test="${cb.num eq 4 }">checked</c:if> onclick="readyPay(this.value)">
+         Basic X FLO 무제한 동시시청 1회선,HD화질,모바일+PC 13750원<BR>
+        </label>
+      </div>
 		</div>
 	</div>
 	<div class="t1">
 		<div>
-			<input type="radio" name="paymemt" value=5 <c:if test="${cb.num eq 5 }">checked</c:if>
+			<input type="radio" class="form-check-input" name="paymemt" value=5 <c:if test="${cb.num eq 5 }">checked</c:if>
 			onclick="readyPay(this.value)">
 			Standard X Bugs 듣기 동시시청 1회선,HD화질,모바일+PC 13750원<BR>
 		</div>
 	</div>
 	<div class="t1">
 		<div>
-			<input type="radio" name="paymemt" value=6 <c:if test="${cb.num eq 6 }">checked</c:if>
+			<input type="radio" name="paymemt" class="form-check-input" value=6 <c:if test="${cb.num eq 6 }">checked</c:if>
 			onclick="readyPay(this.value)">
 			Premium X KB 나라사랑카드 동시시청 1회선,HD화질,모바일+PC 7900원
 		</div>
 	</div>
 </div>
+ </fieldset>
 <div> 
 	<div>
 		<div id="name">
@@ -111,7 +127,7 @@ MoviePark 이용권
 		</div>
 	</div>
 	<div>
-		<input type="button" value="결제하기" onclick="paymentSet('${cb.num}','${loginInfo.num}', ${cnt})">
+		<input type="button" value="결제하기"   class="btn btn-primary btn-lg" onclick="paymentSet('${cb.num}','${loginInfo.num}', ${cnt})">
 	</div>
 </div>
 </div>
