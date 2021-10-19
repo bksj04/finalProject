@@ -164,7 +164,7 @@ increment by 1
   maxvalue 10000
   nocache;
 
-drop table orders;
+drop table orders cascade constraints;
 create table orders(
 	onum number primary key, -- 상품번호
 	mnum number references members(num) on delete set null, -- 멤버 외래키

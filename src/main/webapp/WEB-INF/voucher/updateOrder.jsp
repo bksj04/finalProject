@@ -43,7 +43,7 @@ td{
 		<div >
 			<h2 style="color:#0080FF; font-weight: bold;">회원 이용권 수정창</h2>	
 			<div>
-				<form action="updateVideo.category" method="post" enctype="multipart/form-data">
+				<form action="updateOrder.voucher" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="pageNumber" value="${pageNumber}" >
 					<input type="hidden" name="num" value="${cb.num}">
 					<fieldset>
