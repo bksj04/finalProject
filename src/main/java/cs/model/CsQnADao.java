@@ -39,4 +39,8 @@ private String namespace = "cs.model.CsQnABean";
 		int cnt = sqlSessionTemplate.insert(namespace+".writeAnswer",cqb);
 		return cnt;
 	}
+	public List<CsQnABean> getByData(String writer){
+		List<CsQnABean> lists = sqlSessionTemplate.selectList(namespace+".getByData",writer);
+		return lists;
+	}
 }

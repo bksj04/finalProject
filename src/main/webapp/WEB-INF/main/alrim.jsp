@@ -20,23 +20,19 @@
 			알림이 없습니다.</td>
 		</tr>
 	</c:if>
-		<c:forEach var="m" items="${lists}">
-		<tr>
-			<td>번호</td>
-			<td>제목</td>
-			<td>국가</td>
-			<td>장르</td>
-			<td>등급</td>
-			<td>배우</td>
-		</tr>
-		<tr>
-			<td>${m.num }</td>
-			<td>${m.title}</td>
-			<td>${m.nation }</td>
-			<td>${m.genre }</td>
-			<td>${m.grade}</td>
-			<td>${m.actor}</td>
-		</tr>
+	<tr>
+	<th>NO</th>
+	<th>제목</th>
+	<th>작성자</th>
+	<th>답변일</th>
+	</tr>
+	<c:forEach var="cqb" items="${lists}">
+	<tr>
+	<td></td>
+	<td>${cqb.subject }</td>
+	<td>${cqb.writer }</td>
+	<td>${cqb.reg_date }</td>
+	</tr>
 	</c:forEach>
 
 

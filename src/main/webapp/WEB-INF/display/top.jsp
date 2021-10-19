@@ -68,7 +68,7 @@ overflow:auto;
 
 <script type="text/javascript">
 function openPop(){
-    var popup = window.open("alert.wa", "결제창", "width=700px,height=800px,scrollbars=yes");
+    var popup = window.open("alert.wa", "알림", "width=700px,height=800px,scrollbars=yes");
 }
 </script>
 
