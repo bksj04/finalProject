@@ -20,7 +20,7 @@ import voucher.model.couponDao;
 public class couponController {
 
 	@Autowired
-	couponDao couponDao;
+	couponDao cdao;
 	
 	private final String command = "/coupon.voucher";
 	private final String getPage = "alert";
@@ -33,13 +33,14 @@ public class couponController {
 		
 		Date nowdate = new Date(System.currentTimeMillis());
 		
-		couponBean cb = couponDao.getOneData(cp_number);
-		System.out.println(cb.getCp_name());
 		MemberBean loginInfo = (MemberBean)session.getAttribute("loginInfo");
 		
-		if(nowdate.before(cb.getCp_duedate())) {
-			if(cb.getCp_id() == null) {
-				couponDao.couponRegister(cp_number, loginInfo.getId());
+		couponBean cb1 = cdao.couponInfo(loginInfo.getId());
+		if(cb1 == null) {
+		couponBean cb2 = cdao.getOneData(cp_number);
+		if(nowdate.before(cb2.getCp_duedate())) {
+			if(cb2.getCp_id() == null) {
+				cdao.couponRegister(cp_number, loginInfo.getId());
 				msg = "쿠폰등록이 완료되었습니다.";
 				mav.addObject("msg", msg);
 			}else {
@@ -48,6 +49,10 @@ public class couponController {
 			}
 		}else {
 			msg = "사용기간이 만료된 쿠폰입니다.";
+			mav.addObject("msg", msg);
+		}
+		}else {
+			msg = "사용하지 않은 쿠폰이 있습니다.";
 			mav.addObject("msg", msg);
 		}
 		String alertType = "coupon";

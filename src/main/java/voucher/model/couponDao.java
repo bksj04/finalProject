@@ -50,5 +50,4 @@ public class couponDao {
 		int cnt = sqlSessionTemplate.update(namespace+".couponUse",cp_id);
 		return cnt;
 	}
-
 }

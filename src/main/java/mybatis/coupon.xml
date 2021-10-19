@@ -48,4 +48,5 @@ select * from coupon where cp_number = #{cp_number}
 	<update id="couponUse">
 	update coupon set cp_usedate=sysdate,cp_check='true' where cp_id = #{cp_id} and cp_check = 'false'
 	</update>
+	
 </mapper>
