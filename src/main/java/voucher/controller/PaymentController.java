@@ -24,7 +24,7 @@ public class PaymentController {
 	@Autowired(required = false)
 	CommodityDao cdao;
 	
-	@Autowired
+	@Autowired(required = false)
 	OrderDao odao;
 	
 	@RequestMapping(value=command,method=RequestMethod.GET)
