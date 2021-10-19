@@ -5,11 +5,20 @@
 	.tt{
 	border-collapse: separate;
   	border-spacing: 0 10px;
-	}
-	td{
+  	border-radius: 5px;
+  	width:50%;
 	border-radius: 5px;
-	height: 50px	
+	vertical-align: 5px;
+	vertical-align:middle;
 	}
+	.t1{
+	height: 50px;
+	background-color: gray;
+	border-radius: 5px;
+	margin: 5px;
+	font-size: 25px;
+	}
+	
 </style>
 <script type="text/javascript">
 	function readyPay(paymemt) {
@@ -39,57 +48,56 @@
 MoviePark 이용권
 방송 + LIVE + wavvie영화 + 해외시리즈
 
-<div class="dt">
-<table class="tt">
-	<tr bgcolor="gray" >
-		<td >
-		
+<div class="dt" >
+<div class="tt">
+	<div class="t1">
+		<div >
 			<input type="radio" name="paymemt" value=1 <c:if test="${cb.num eq 1 }">checked</c:if>
-			 onclick="readyPay(this.value)" >
+			 onclick="readyPay(this.value)" style="vertical-align: middle;" >
 			Basic 동시시청 1회선,HD화질,모바일+PC 7900원<BR>
-		</td>
-	</tr>
-	<tr bgcolor="gray">
-		<td>
+		</div>
+	</div>
+	<div class="t1">
+		<div>
 			<input type="radio" name="paymemt" value=2 <c:if test="${cb.num eq 2 }">checked</c:if>
 			 onclick="readyPay(this.value)">
 			Standard 동시시청 2회선,FHD화질,전체 디바이스 10900원<BR>
-		</td>
-	</tr>
-	<tr bgcolor="gray">
-		<td>
+		</div>
+	</div >
+	<div class="t1">
+		<div>
 			<input type="radio" name="paymemt" value=3 <c:if test="${cb.num eq 3 }">checked</c:if>
 			 onclick="readyPay(this.value)">
 			Premium 동시시청 4회선,최고화질,전체 디바이스 13900원
-		</td>
-	</tr>
-</table>
+		</div>
+	</div>
+</div>
 <br><Br>
 
 제휴 이용권
-<table class="tt">
-	<tr bgcolor="gray">
-		<td>
+<div class="tt">
+	<div class="t1">
+		<div>
 			<input type="radio" name="paymemt" value=4  <c:if test="${cb.num eq 4 }">checked</c:if>
 			onclick="readyPay(this.value)">
 			Basic X FLO 무제한 동시시청 1회선,HD화질,모바일+PC 13750원<BR>
-		</td>
-	</tr>
-	<tr bgcolor="gray">
-		<td>
+		</div>
+	</div>
+	<div class="t1">
+		<div>
 			<input type="radio" name="paymemt" value=5 <c:if test="${cb.num eq 5 }">checked</c:if>
 			onclick="readyPay(this.value)">
 			Standard X Bugs 듣기 동시시청 1회선,HD화질,모바일+PC 13750원<BR>
-		</td>
-	</tr>
-	<tr bgcolor="gray">
-		<td>
+		</div>
+	</div>
+	<div class="t1">
+		<div>
 			<input type="radio" name="paymemt" value=6 <c:if test="${cb.num eq 6 }">checked</c:if>
 			onclick="readyPay(this.value)">
 			Premium X KB 나라사랑카드 동시시청 1회선,HD화질,모바일+PC 7900원
-		</td>
-	</tr>
-</table>
+		</div>
+	</div>
+</div>
 <div> 
 	<div>
 		<div id="name">

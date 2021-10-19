@@ -11,7 +11,7 @@
 
 <%@include file="../display/top.jsp" %>
 
-<form>
+<form style="text-align: center;">
 	<br><br>
 	<div id=tap>
 	<h4>이용권</h4><br>
@@ -22,15 +22,12 @@
 	
 	<div >
 		<div valign="bottom">
-			<div><a href="pay.voucher">MoviePark이용권</a></div>
-			<div><a href="coin.voucher">쿠폰</a></div>
+			<div><a href="pay.voucher">MoviePark이용권</a>/<a href="coin.voucher">쿠폰</a></div>
 		</div>
 		
 		<div>
-			<div>
-				<table style="text-align: center;">
+			<div style="vertical-align: middle;">
 					<jsp:include page="<%=contentPage %>"/>
-				</table>
 			</div>
 		</div>
 	</div>
