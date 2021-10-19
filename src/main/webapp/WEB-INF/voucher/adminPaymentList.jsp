@@ -39,10 +39,6 @@ table {
 				<option value="name">이름</option>
 			</select> <input type="text" name="keyword"> <input type="submit" class="btn btn-primary"
 				value="검색">
-			<div align="right">
-				<input type="button" class="btn btn-primary" value="게시물추가"
-					onClick="videoInsert()">
-			</div>
 		</form>
 		<table border="1" align="center" width="600" class="table">
 			<thead class="table-light">

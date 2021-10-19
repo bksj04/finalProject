@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import member.model.MemberBean;
+import member.model.MemberDao;
+import order.model.OrderBean;
 import order.model.OrderDao;
 
 @Controller
@@ -18,13 +21,39 @@ public class PaymentUpdateOrderController {
 	@Autowired(required = false)
 	OrderDao odao;
 	
-	@RequestMapping(value=command,method = RequestMethod.POST)
+	@Autowired(required = false)
+	MemberDao mdao;
+	
+	
+	@RequestMapping(value=command,method = RequestMethod.GET)
 	public ModelAndView doAction(@RequestParam("mnum")int mnum,
 			@RequestParam("pageNumber")int pageNumber) {
 		
+		MemberBean mb=mdao.getByNumData(mnum);
+		OrderBean ob=odao.getOneData(mnum);
+		
 		ModelAndView mav=new ModelAndView();
+		mav.addObject("pageNumber",pageNumber);
+		mav.addObject("mb",mb);
+		mav.addObject("ob", ob);
 		mav.setViewName(getPage);
 		return mav;
 	}
 	
+	@RequestMapping(value=command,method =RequestMethod.POST )
+	public ModelAndView doAction(@RequestParam("commodity") int commodity,
+			@RequestParam("num") int num,
+			@RequestParam("pageNumber")int pageNumber) {
+		
+		OrderBean ob=new OrderBean();
+		ob.setMnum(num);
+		ob.setCnum(commodity);
+		
+		odao.updateData(ob);
+		
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("pageNumber",pageNumber);
+		mav.setViewName("redirect:/paymentList.voucher");
+		return mav;
+	}
 }

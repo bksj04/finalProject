@@ -21,18 +21,8 @@
 	</select>
 	
 	<update id="updateData">
-		update orders set cnum=
+		update orders set cnum=#{cnum} where mnum=#{mnum}
 	</update>
-	<!-- <insert id="insertOne">
-		insert into orders 
-		values(orders_seq.nextval,#{mnum},sysdate,#{cnum})
-	</insert>
-	<select id="selectOne" resultType="MyOrder">
-		select * from orders where mnum=#{mnum}
-	</select>
-	<insert id="setInsertDetail" >
-		insert into orderdetails values(orderdetails_seq.nextval,#{onum},#{cnum})
-	</insert> -->
 	
 	<select id="getOneData" resultType="MyOrder">
 	select * from orders where mnum=#{mnum}
