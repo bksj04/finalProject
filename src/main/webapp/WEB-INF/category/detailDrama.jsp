@@ -139,13 +139,14 @@
 		<c:forEach var="glist" items="${dlists }">
 		<div style="display: inline-block;">
 			<div class="else">
-				<figure>
-					<c:forEach var="clist" items="${clists }">
+				<c:forEach var="clist" items="${clists }">
 						<c:if test="${glist.vnum eq clist.num && clist.category eq 'drama' && glist.title ne db.title}">
-							<a href="detailDrama.category?num=${clist.num}"><img src="resources/images/poster/${clist.image}"
-								class="poster_img" /></a>					
-				</figure>
-				<h4>
+							<figure>
+								
+										<a href="detailDrama.category?num=${clist.num}"><img src="resources/images/poster/${clist.image}"
+											class="poster_img" /></a>					
+							</figure>
+						<h4>
 				
 					<span class="icon all ir_pm"> <c:if
 							test="${glist.grade eq '18' }">
@@ -161,9 +162,10 @@
 					<strong>					
 					<a href="detailDrama.category?num=${clist.num}">${glist.title }</a>
 					</strong>
-					</c:if>
-					</c:forEach>
+					
 				</h4>
+					</c:if>
+				</c:forEach>
 			</div>
 		</div>
 	</c:forEach>

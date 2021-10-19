@@ -133,9 +133,9 @@
 	<c:forEach var="glist" items="${dlists }">
 		<div style="display: inline-block;">
 			<div class="else">
-				<figure>
 					<c:forEach var="clist" items="${clists }">
 						<c:if test="${glist.vnum eq clist.num  && clist.category eq 'movie' && glist.title ne db.title}">
+				<figure>
 							<a href="detailMovie.category?num=${clist.num}"><img src="resources/images/poster/${clist.image}"
 								class="poster_img" /></a>
 					
@@ -152,9 +152,9 @@
 							<img src="resources/images/icon/all.svg" class="icon_img">
 						</c:if>
 					</span> <strong><a href="detailMovie.category?num=${clist.num}">${glist.title }</a></strong>
+				</h4>
 						</c:if>
 					</c:forEach>
-				</h4>
 			</div>
 		</div>
 	</c:forEach>

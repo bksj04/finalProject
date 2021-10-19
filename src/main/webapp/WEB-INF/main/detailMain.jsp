@@ -135,9 +135,9 @@
 	<c:forEach var="glist" items="${dlists }" >
 				<div style="display: inline-block;">
 					<div class="else" >
-						<figure>
 							<c:forEach var="clist" items="${clists }">
 								<c:if test="${glist.vnum eq clist.num && glist.title ne dmb.title }" >
+						<figure>
 									<a href="detailMain.wa?num=${clist.num}"><img src="resources/images/poster/${clist.image}" class="poster_img"/>	</a>							
 						</figure>
 						<h4><span class="icon all ir_pm">
