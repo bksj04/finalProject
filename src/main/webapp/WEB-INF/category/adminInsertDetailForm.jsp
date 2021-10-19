@@ -4,6 +4,11 @@
 <%@include file="./../common/common.jsp"%>
 
 <style>
+.err{
+		font-size: 13pt;
+		color: red;
+		font-weight: bold;
+		}
 #container{
 height: 600px;
 }
@@ -38,7 +43,8 @@ td{
 		<div>
 			<h2 style="color:#0080FF; font-weight: bold;">영상 게시물 추가창</h2>	
 			<div>
-				<form action="adminLastInsertVideo.category" method="post" enctype="multipart/form-data">
+
+				<form:form commandName ="detailBean" action="adminLastInsertVideo.category" method="post" >
 					<fieldset>
 			<div class="form-group">
 				<input type="hidden" name="vnum" value="${cb.num }">
@@ -48,22 +54,27 @@ td{
 		<div class="form-group">
 				<label for="category" class="form-label mt-4">줄거리</label>
 				<textarea rows="10" cols="50" name="content"></textarea>
+				<form:errors cssClass="err" path="content" />
 			</div>
 			<div class="form-group">
 				<label for="runningT" class="form-label mt-4">러닝타임</label>
 				<input type="text" name="runningT">
+				<form:errors cssClass="err" path="runningT" />
 			</div>
 			<div class="form-group">
 				<label for="genre" class="form-label mt-4">장르</label>
 				<input type="text" name="genre">
+				<form:errors cssClass="err" path="genre" />
 			</div>
 			<div class="form-group">
 				<label for="nation" class="form-label mt-4">국가</label>
 				<input type="text" name="nation">
+				<form:errors cssClass="err" path="nation" />
 			</div>
 			<div class="form-group">
 				<label for="actor" class="form-label mt-4">출연진</label>
 				<input type="text" name="actor">
+				<form:errors cssClass="err" path="actor" />
 			</div>
 			<div class="form-group">
 				<label for="grade" class="form-label mt-4">시청 연령 제한</label>
@@ -72,10 +83,12 @@ td{
 			<div class="form-group">
 				<label for="day" class="form-label mt-4">방영일</label>
 				<input type="text" name="day">
+				<form:errors cssClass="err" path="day" />
 			</div>
 			<div class="form-group">
 				<label for="series" class="form-label mt-4">제작 화수</label>
 				<input type="text" name="series">
+				<form:errors cssClass="err" path="series" />
 			</div>
 		</fieldset>
 		<br><br>
@@ -83,7 +96,7 @@ td{
 			<input type="submit" class="btn btn-primary" value="저장">
 			<input type="button" class="btn btn-primary" onclick="history.go(-1);" value="취소">
 			</div>
-				</form>
+				</form:form>
 			</div>
 		</div>
 	</div>
