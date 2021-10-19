@@ -32,10 +32,10 @@ public class OrderController {
 		System.out.println(cnt); 
 		
 		ModelAndView mav=new ModelAndView();
-		if(cnt>0) {
-			
+		
+		mav.addObject("cnt", cnt);
 			mav.setViewName(getPage);
-		}
+			
 		return mav;
 	}
 }

@@ -32,12 +32,12 @@ public class PaymentController {
 		
 		MemberBean loginInfo = (MemberBean) session.getAttribute("loginInfo");
 		
-		OrderBean ob = odao.getOneData(loginInfo.getNum());
+		int cnt = odao.OrderCheck(loginInfo.getNum());
 		CommodityBean cb=cdao.selectMember(num);
 		
 		ModelAndView mav=new ModelAndView();
 		
-		
+		mav.addObject("cnt", cnt);
 		mav.addObject("cb",cb);
 		mav.setViewName(getPage);
 		return mav;

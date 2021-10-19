@@ -24,7 +24,7 @@
 		update orders set cnum=#{cnum} where mnum=#{mnum}
 	</update>
 	
-	<select id="getOneData" resultType="MyOrder">
-	select * from orders where mnum=#{mnum}
+	<select id="OrderCheck" resultType="int">
+	select count(*) from orders where mnum=#{mnum}
 	</select>
 </mapper>
