@@ -53,11 +53,7 @@
 MoviePark 이용권
 방송 + LIVE + wavvie영화 + 해외시리즈
 </h5>
-<div class="product_purchase">
-	
 
-				</div>
-			</div>
 <div class="dt" align="center" >
 <div class="tt">
 	<div class="t1">
@@ -88,7 +84,7 @@ MoviePark 이용권
 <div class="tt">
 	<div class="t1">
 		<div>
-			<fieldset class="form-group">
+		
       
       <div class="form-check">
         <label class="form-check-label">
@@ -113,7 +109,7 @@ MoviePark 이용권
 		</div>
 	</div>
 </div>
- </fieldset>
+
 <div> 
 	<div>
 		<div id="name">
