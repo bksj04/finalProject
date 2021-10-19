@@ -72,7 +72,7 @@ table {
 						<td>
 							<c:forEach var="olist" items="${olists }">
 								<c:if test="${mlist.num eq olist.mnum }">
-									${olist.mnum }
+									${olist.cnum }
 								</c:if>
 							</c:forEach>
 						</td>

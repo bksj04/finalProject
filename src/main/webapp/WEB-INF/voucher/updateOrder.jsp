@@ -43,7 +43,7 @@ td{
 		<div >
 			<h2 style="color:#0080FF; font-weight: bold;">회원 이용권 수정창</h2>	
 			<div>
-				<form action="updateOrder.voucher" method="post" enctype="multipart/form-data">
+				<form action="updateOrder.voucher" method="post" >
 					<input type="hidden" name="pageNumber" value="${pageNumber}" >
 					<input type="hidden" name="num" value="${cb.num}">
 					<fieldset>
@@ -51,7 +51,7 @@ td{
 				<label for="name" class="form-label mt-4">회원 이름</label>
 				<input type="text" readonly name="name" value="${mb.name}">
 			</div>
-			<div class="form-group">
+			<div class="form-group" >
 				<label for="commodity" class="form-label mt-4">상품번호</label><br>
 				
 				<input type="radio" name="commodity" value=1  <c:if test="${ob.cnum eq 1 }">checked</c:if>>
@@ -76,7 +76,7 @@ td{
 		</fieldset>
 		<br><br>
 			<div align="center">
-			<input type="submit" class="btn btn-primary" value="다음">
+			<input type="submit" class="btn btn-primary" value="수정">
 			<input type="button" class="btn btn-primary" onclick="history.go(-1);" value="취소">
 			</div>
 				</form>
