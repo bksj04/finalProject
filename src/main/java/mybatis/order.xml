@@ -20,6 +20,10 @@
 		</if>
 	</select>
 	
+	<select id="getOneData" resultType="MyOrder">
+		select * from order where mnum=#{mnum}
+	</select>
+	
 	<update id="updateData">
 		update orders set cnum=#{cnum} where mnum=#{mnum}
 	</update>

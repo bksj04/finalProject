@@ -20,20 +20,20 @@
 	<br>
 	<hr color=gray>
 	
-	<table >
-		<tr valign="bottom">
-			<td><a href="pay.voucher">MoviePark이용권</a></td>
-			<td><a href="coin.voucher">쿠폰</a></td>
-		</tr>
+	<div >
+		<div valign="bottom">
+			<div><a href="pay.voucher">MoviePark이용권</a></div>
+			<div><a href="coin.voucher">쿠폰</a></div>
+		</div>
 		
-		<tr>
-			<td>
+		<div>
+			<div>
 				<table style="text-align: center;">
 					<jsp:include page="<%=contentPage %>"/>
 				</table>
-			</td>
-		</tr>
-	</table>
+			</div>
+		</div>
+	</div>
 </form>
 
 <%@include file="../display/bottom.jsp" %>
