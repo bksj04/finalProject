@@ -20,7 +20,7 @@
 	background-color: gray;
 	border-radius: 5px;
 	margin: 5px;
-	font-size: 25px;
+	font-size: 20px;
 	color: white; 
 	}
 	
