@@ -23,7 +23,7 @@
 	<table >
 		<tr valign="bottom">
 			<td><a href="pay.voucher">MoviePark이용권</a></td>
-			<td><a href="coin.voucher">쿠폰.코인</a></td>
+			<td><a href="coin.voucher">쿠폰</a></td>
 		</tr>
 		
 		<tr>
