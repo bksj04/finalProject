@@ -32,7 +32,6 @@ public class videoPlayController {
 		String commodity_name = memberDao.getByCommodity(loginInfo.getNum());
 		if(commodity_name == null) {
 			
-			session.setAttribute("destination", "play.video");
 			mav.addObject("msg", "이용권을 구매 후 이용해주세요");
 			mav.setViewName("alert");
 		}else {
