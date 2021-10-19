@@ -14,6 +14,8 @@ import commodity.model.CommodityDao;
 import member.model.MemberBean;
 import order.model.OrderBean;
 import order.model.OrderDao;
+import voucher.model.couponBean;
+import voucher.model.couponDao;
 
 @Controller
 public class PaymentController {
@@ -27,6 +29,9 @@ public class PaymentController {
 	@Autowired(required = false)
 	OrderDao odao;
 	
+	@Autowired
+	couponDao cpdao;
+	
 	@RequestMapping(value=command,method=RequestMethod.GET)
 	public ModelAndView doAction(@RequestParam("num") int num,HttpSession session) {
 		
@@ -34,11 +39,14 @@ public class PaymentController {
 		
 		int cnt = odao.OrderCheck(loginInfo.getNum());
 		CommodityBean cb=cdao.selectMember(num);
+		couponBean cpb = cpdao.couponInfo(loginInfo.getId());
 		
 		ModelAndView mav=new ModelAndView();
 		
+		mav.addObject("cpb", cpb);
 		mav.addObject("cnt", cnt);
 		mav.addObject("cb",cb);
+		
 		mav.setViewName(getPage);
 		return mav;
 	}

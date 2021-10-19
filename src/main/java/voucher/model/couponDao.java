@@ -42,4 +42,13 @@ public class couponDao {
 		int cnt = sqlSessionTemplate.insert(namespace+".insertData",cb);
 		return cnt;
 	}
+	public couponBean couponInfo(String cp_id) {
+		couponBean cb = sqlSessionTemplate.selectOne(namespace+".couponInfo",cp_id);
+		return cb;
+	}
+	public int couponUse(String cp_id) {
+		int cnt = sqlSessionTemplate.update(namespace+".couponUse",cp_id);
+		return cnt;
+	}
+
 }

@@ -40,4 +40,12 @@ select * from coupon where cp_number = #{cp_number}
 	<insert id="insertData">
 	insert into coupon values(coupon_seq.nextval,'',#{cp_name},#{cp_number},#{cp_discount},'',#{cp_duedate},'','false')
 	</insert>
+	
+	<select id="couponInfo" resultType="MyCoupon">
+	select * from coupon where cp_id = #{cp_id} and cp_check = 'false'
+	</select>
+	
+	<update id="couponUse">
+	update coupon set cp_usedate=sysdate,cp_check='true' where cp_id = #{cp_id} and cp_check = 'false'
+	</update>
 </mapper>

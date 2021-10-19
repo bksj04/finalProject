@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="../common/common.jsp"%>
 <script type="text/javascript" src="/resource/script/web/common/jquery-1.9.1.min.js"></script>
 	
 <style type="text/css">
@@ -118,9 +118,16 @@ MoviePark 이용권
 		<div id="content">
 			${cb.content }
 		</div>
+		<c:if test="${cpb != null }">
+		<div id="price">
+		쿠폰<fmt:formatNumber value="${cpb.cp_discount}" type="percent"/>할인 적용 <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${cb.price - cb.price * cpb.cp_discount}" />원
+		</div>
+		</c:if>
+		<c:if test="${cpb == null }">
 		<div id="price">
 			 ${cb.price }원
 		</div>
+		</c:if>
 	</div>
 	<div>
 		<input type="button" value="결제하기"   class="btn btn-primary btn-lg" onclick="paymentSet('${cb.num}','${loginInfo.num}', ${cnt})">
