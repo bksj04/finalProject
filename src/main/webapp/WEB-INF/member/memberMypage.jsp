@@ -21,19 +21,19 @@ table {
 			<h5>구매한 컨텐츠</h5>
 	<table style="text-align: center; margin: 5px;">
 		<tr>
-		<c:if test="${commodity_name == null}">
+		<c:if test="${cb == null}">
 			<td align=center>
 			현재 구매한 이용권이 없습니다
 			</td>
 			</c:if>
-			<c:if test="${commodity_name != null}">
+			<c:if test="${cb != null}">
 			<td align=center>
-			<font color="white">${commodity_name} 이용권을 이용 중입니다.</font>
+			<font color="white">${cb.name} 이용권을 이용 중입니다.</font>
 			</td>
 			</c:if>
 		</tr>
 		<tr>
-			<c:if test="${commodity_name != null}">
+			<c:if test="${cb != null}">
 			<td align=center>
 				<font color="white">${cb.content} </font>
 			</td>

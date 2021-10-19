@@ -59,13 +59,11 @@ public class MemberMyPageController {
 		}else {
 		List<MemberJjimBean> cblists = mjdao.getByMydata(loginInfo.getId());
 		List<MemberWatchBean> wblists = mwdao.getByMydata(loginInfo.getId());
-		String commodity_name = memberDao.getByCommodity(loginInfo.getNum());
-		
-		OrderBean ob=odao.getOneData(loginInfo.getNum());
-		System.out.println("ob.getCnum() : "+ob.getCnum());
-		CommodityBean cb=cdao.selectMember(ob.getCnum());
-		System.out.println("cb.getContent() : " +cb.getContent());
-		mav.addObject("commodity_name", commodity_name);
+		CommodityBean cb = null;
+		OrderBean ob =odao.getOneData(loginInfo.getNum());
+		if(ob != null) {
+			cb=cdao.selectMember(ob.getCnum());
+		}
 		mav.addObject("cb",cb);
 		mav.addObject("cblists", cblists);
 		mav.addObject("wblists", wblists);
