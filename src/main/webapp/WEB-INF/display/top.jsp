@@ -122,9 +122,6 @@ function openPop(){
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="live.wa">Live</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="mypage.member">My</a>
           </li>
                 <li class="nav-item">
