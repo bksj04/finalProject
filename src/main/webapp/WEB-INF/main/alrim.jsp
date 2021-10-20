@@ -9,7 +9,7 @@
 		color: white;
 	}
 </style>
-<div>알림창</div>
+<div>알림</div>
 
 <table align="center">
 
@@ -34,6 +34,4 @@
 	<td>${cqb.reg_date }</td>
 	</tr>
 	</c:forEach>
-
-
 </table>
