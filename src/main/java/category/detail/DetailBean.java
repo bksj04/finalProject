@@ -3,6 +3,7 @@ package category.detail;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 import org.hibernate.validator.constraints.Range;
 
@@ -13,7 +14,7 @@ public class DetailBean {
 	private String title;
 	@NotBlank(message = "줄거리를 입력해주세요")
 	private String content;
-	
+	@Null(message = "줄거리를 입력해주세요")
 	private int runningT;
 	@NotBlank(message = "장르를 입력해주세요")
 	private String genre;
@@ -24,7 +25,7 @@ public class DetailBean {
 	private String grade;
 	@NotBlank(message = "방영일을 입력해주세요")
 	private String day;
-
+	@Null(message = "줄거리를 입력해주세요")
 	private int series;
 	private String video;	
 	private String image;
