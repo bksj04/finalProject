@@ -31,7 +31,7 @@ table {
 				질문
 				</c:if>
 				<c:if test="${cqb.re_level == 1}">
-				<img src="resources/images/re.gif">
+				<img src="resources/images/re.gif">답변완료
 				</c:if>
 				</td>
 				<td width="300"><a

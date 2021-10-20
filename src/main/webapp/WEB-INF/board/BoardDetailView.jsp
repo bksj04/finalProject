@@ -11,22 +11,13 @@ width:600px;
 margin: auto;
 width:600px;
 }
-  table {
-    border-top: 1px solid #F4FFFF;
-    border-collapse: collapse;
-    width:600px;
-  }
-  th, td{
-    border-bottom: 1px solid #F4FFFF;
-    padding: 10px;
-  }
 </style>
 	<div id="boardDetailView">
-    <table>
+    <table class="table">
     <tr>
-    <td><h3>${bb.subject }</h3></td>
+    <td align="center"><h4>${bb.subject }</h4></td>
     </tr>
-    <tr>
+    <tr height="50">
     <td align="right"><b>작성자 :</b> ${bb.writer } <b>조회수 :</b> ${bb.readcount } 
     <b>등록일 :</b> <fmt:parseDate value="${bb.reg_date }" var="noticePostDate" pattern="yyyy-MM-dd" /> <fmt:formatDate value="${noticePostDate}" pattern="yyyy-MM-dd" var="reg_date" /> ${reg_date }</td>
     </tr>
@@ -66,7 +57,7 @@ width:600px;
 	</form>
 	</c:if>
 	<c:forEach items="${reply}" var="reply">
-	<table>
+	<table class="table table-hover">
 	<tr>
 	<td>
 		<font size="3">ID : ${reply.writer} / <fmt:parseDate value="${reply.reg_date}" var="noticePostDate"

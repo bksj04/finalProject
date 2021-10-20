@@ -43,4 +43,8 @@ private String namespace = "cs.model.CsQnABean";
 		List<CsQnABean> lists = sqlSessionTemplate.selectList(namespace+".getByData",writer);
 		return lists;
 	}
+	public int getByTotalCount(String writer) {
+		int count = sqlSessionTemplate.selectOne(namespace+".getByTotalCount",writer);
+		return count;
+	}
 }

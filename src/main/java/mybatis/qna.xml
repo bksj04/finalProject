@@ -45,4 +45,8 @@ insert into qna values(qna_seq.nextval,#{writer},#{subject},qna_seq.currval,0,sy
 	<select id="getByData" resultType="MyCsQnA">
 	select * from qna where ref IN(select ref from qna where writer = #{writer}) and re_level > 0
 	</select>
+	
+	<select id="getByTotalCount" resultType="int">
+	select count(*) as count from qna where ref IN(select ref from qna where writer = #{writer}) and re_level > 0
+	</select>
 </mapper>
