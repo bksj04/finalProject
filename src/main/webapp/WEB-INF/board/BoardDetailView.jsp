@@ -32,7 +32,6 @@ width:600px;
     <br><br>
     </div>
     <div id="reply">
-    ${replyType }
     <c:if test="${replyType == 'write' }">
     	<form method="post" action="replyWrite.board">
 	<input type="hidden" name="bnum" value="${bb.num}">
