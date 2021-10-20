@@ -18,7 +18,7 @@ import voucher.model.couponDao;
 @Controller
 public class PaymentSetController {
 	private final String command="/paymentSet.voucher";
-	private final String goPage="payment";
+	private final String gotoPage="payment";
 	
 	@Autowired(required = false)
 	CommodityDao cdao;
@@ -37,7 +37,7 @@ public class PaymentSetController {
 		ModelAndView mav=new ModelAndView();
 		mav.addObject("cpb", cpb);
 		mav.addObject("cb",cb);
-		mav.setViewName(goPage);
+		mav.setViewName(gotoPage);
 		return mav;
 	}
 }

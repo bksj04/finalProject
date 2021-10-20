@@ -6,12 +6,10 @@
 <%@ include file="../common/common.jsp"%>
 <script type="text/javascript">
 	function selectCard(){
-		alert("!");
 		document.getElementById("img").src="resources/images/icon/card.jpg"
 	}
 	
 	function selectCash(){
-		alert("~");
 		document.getElementById("img").src="resources/images/icon/cash.jpg"
 	}
 </script>
@@ -26,9 +24,6 @@ div {
 	background-color: #ddd;
 }
 </style>
-payment.jsp
-<br>
-<Br>
 <%
 	Calendar cal = Calendar.getInstance();
 	cal.add(Calendar.MONTH, 1);
@@ -51,20 +46,15 @@ payment.jsp
 				이용기간 :
 				<%=sf.format(nowTime) %>~<%=sf.format(cal.getTime())%>
 			</div>
-			<div id="b_price">금액(매월) : ${cb.price }</div>
+			<div id="b_price">금액(매월) : ${cb.price }원</div>
 
 			<c:if test="${cpb != null }">
 				<div id="b_price">
 					쿠폰<fmt:formatNumber value="${cpb.cp_discount}" type="percent"/>할인 적용
 					<fmt:formatNumber type="number" pattern="###,###,###,###,###,###"
-						value="${cb.price - cb.price * cpb.cp_discount}" />
-					원
+						value="${cb.price - cb.price * cpb.cp_discount}" />원
 				</div>
 			</c:if>
-			<c:if test="${cpb == null }">
-				<div id="b_price">${cb.price }원</div>
-			</c:if>
-
 		</div>
 		<div id="payment">
 			결제수단 선택 : <input type="radio" name="payment" value="card"

@@ -120,7 +120,7 @@ MoviePark 이용권
 		</div>
 		<c:if test="${cpb != null }">
 		<div id="price">
-		쿠폰<fmt:formatNumber value="${cpb.cp_discount}" type="percent"/>할인 적용 <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${cb.price - cb.price * cpb.cp_discount}" />원
+		쿠폰 <fmt:formatNumber value="${cpb.cp_discount}" type="percent"/>할인 적용<fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${cb.price - cb.price * cpb.cp_discount}" />원
 		</div>
 		</c:if>
 		<c:if test="${cpb == null }">

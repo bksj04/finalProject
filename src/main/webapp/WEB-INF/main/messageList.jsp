@@ -14,18 +14,20 @@
 <div class="container row" style="float: none; margin:100 auto;">
 <div class="col-md-3" style="float: none; margin:0 auto;">
 <table class="table table-hover" style="text-align: center">
-	<c:if test="${empty lists}">
-		<tr align="center">
-			 <td>
-			쪽지가 없습니다.</td>
-		</tr>
-	</c:if>
-	<tr>
+	
+		<tr>
 	<th>NO</th>
 	<th>제목</th>
 	<th>작성자</th>
 	<th>작성일</th>
 	</tr>
+	
+	<c:if test="${empty lists}">
+		<tr align="center">
+			 <td colspan="4">
+			쪽지가 없습니다.</td>
+		</tr>
+	</c:if>
 	<c:forEach var="cqb" items="${lists}" varStatus="status">
 	<tr>
 	<td>${TotalCount - status.index }</td>

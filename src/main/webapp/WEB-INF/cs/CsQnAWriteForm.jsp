@@ -12,7 +12,7 @@
    		</div>
    		<div class="p-3">
       <label for="QnA" class="form-label">내용</label>
-      <textarea class="form-control" name="content" rows="3"></textarea>
+      <textarea class="form-control" name="content" rows="3" placeholder="내용 입력"></textarea>
     	</div>
     	<div class="p-3">
     	<div align="right">

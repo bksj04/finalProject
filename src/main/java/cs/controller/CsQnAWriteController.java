@@ -23,10 +23,15 @@ public class CsQnAWriteController {
 	private final String gotoPage = "redirect:main.wa";
 	
 	@RequestMapping(value=command,method=RequestMethod.GET)
-	public ModelAndView doActionGet() {
+	public ModelAndView doActionGet(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
 		
+		MemberBean loginInfo = (MemberBean)session.getAttribute("loginInfo");
+		if(loginInfo == null) {
+			mav.setViewName("redirect:login.member");
+		}else {
 		mav.setViewName(getPage);
+		}
 		return mav;
 	}
 	@RequestMapping(value=command,method=RequestMethod.POST)
