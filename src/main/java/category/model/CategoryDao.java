@@ -20,6 +20,7 @@ public class CategoryDao {
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
 	
+	
 	public List<CategoryBean> selectAll() {
 		List<CategoryBean> lists=new ArrayList<CategoryBean>();
 		
