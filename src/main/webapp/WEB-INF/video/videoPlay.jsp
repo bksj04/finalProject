@@ -2,10 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@include file="../display/top.jsp"%>
   <style>
-      video { max-width: 80%; display: block; margin: 20px auto; }
+      video { max-width: 80%; display: block; margin: 20px auto; max-height: 80%; }
       video[poster]{ 
-    height:100%;
-    width:100%;
+    height:600px;
+    width:600px;
     }
     </style>
    <video controls poster="resources/images/poster/${watch.video_image}">
