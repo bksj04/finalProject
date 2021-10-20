@@ -92,7 +92,7 @@
 				</c:if>
 				<c:if test="${flag == 'false' }">
 					<a
-						href="insertjjim.member?video_num=${db.num}&member_id=${loginInfo.id}">
+						href="insertjjim.member?video_num=${db.num}&member_id=${loginInfo.id}&video_category=${db.category}">
 						<button class="btn btn-outline-danger">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
