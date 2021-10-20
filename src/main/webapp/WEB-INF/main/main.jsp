@@ -51,7 +51,7 @@
     <!-- Swiper -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <c:forEach var="mlist" items="${lists}">
+        <c:forEach var="mlist" items="${vlists}">
        	 	<div class="swiper-slide"><a href="detailMain.wa?num=${mlist.num}">
        	 	<img src="resources/images/poster/${mlist.image}"></a></div>
         </c:forEach>

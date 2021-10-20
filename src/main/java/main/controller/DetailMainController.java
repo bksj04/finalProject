@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import category.detail.DetailBean;
+import category.detail.DetailDao;
+import category.model.CategoryBean;
+import category.model.CategoryDao;
 import main.detail.DetailMainBean;
 import main.detail.DetailMainDao;
 import main.model.MainBean;
@@ -33,11 +37,15 @@ public class DetailMainController {
 	@Autowired
 	MemberJjimDao mjdao;
 	
-
+	@Autowired
+	DetailDao ddao;
+	
+	@Autowired
+	CategoryDao cdao;
 	
 	@RequestMapping(value=command,method=RequestMethod.GET)
 	public ModelAndView doAction(@RequestParam("num") int num,HttpSession session) {
-		
+		System.out.println("1:"+1);
 		ModelAndView mav=new ModelAndView();
 		
 		MemberBean loginInfo = (MemberBean) session.getAttribute("loginInfo");
@@ -46,15 +54,16 @@ public class DetailMainController {
 			mav.addObject("msg", "로그인을 해야합니다");
 			mav.setViewName("alert");
 		}else {
-		DetailMainBean dmb = dmdao.detailMainVideoView(num);
-		List<DetailMainBean> dlists = dmdao.detailMainVideoGenre(dmb.getGenre());
-		List<MainBean> clists = mdao.selectMainAll();
-		List<MemberJjimBean> mjlists = mjdao.getByData(loginInfo.getId());
 		
-		mav.addObject("dmb",dmb);
-		mav.addObject("dlists",dlists);
-		mav.addObject("clists",clists);
-		mav.addObject("mjlists",mjlists);
+			DetailBean db=ddao.detailVideoView(num);
+			List<DetailBean> dlists = ddao.detailVideoGenre(db.getGenre());
+			List<CategoryBean> clists=cdao.selectAll();
+			List<MemberJjimBean> mjlists = mjdao.getByData(loginInfo.getId());
+			
+			mav.addObject("db",db);
+			mav.addObject("dlists",dlists);
+			mav.addObject("clists",clists);
+			mav.addObject("mjlists", mjlists);
 		
 		mav.setViewName(getPage);
 		}

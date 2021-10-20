@@ -65,23 +65,23 @@
 	<div id="detailVideo">
 		<div class="poster">
 				<figure>
-				<img src="resources/images/poster/${dmb.image}" class="poster_img" />
+				<img src="resources/images/poster/${db.image}" class="poster_img" />
 				</figure>
 		</div>
 		<div class="infor">
-			<div class="infor_title">${dmb.title }</div>
+			<div class="infor_title">${db.title }</div>
 			<div>
-				<a href="play.video?video_num=${dmb.num}&member_id=${loginInfo.id}&video_image=${dmb.image}"><button
+				<a href="play.video?video_num=${db.num}&member_id=${loginInfo.id}&video_image=${db.image}"><button
 						name="view" class="btn btn-primary">시청하기</button></a>&nbsp;&nbsp;&nbsp;
 				<c:set var="flag" value="false" />
 				<c:forEach var="jjim" items="${mjlists }">
-					<c:if test="${jjim.video_num == dmb.num }">
+					<c:if test="${jjim.video_num == db.num }">
 						<c:set var="flag" value="true" />
 					</c:if>
 				</c:forEach>
 				<c:if test="${flag == 'true' }">
 					<a
-						href="deletejjim.member?video_num=${dmb.num}&member_id=${loginInfo.id}&video_category=${dmb.category}"><button
+						href="deletejjim.member?video_num=${db.num}&member_id=${loginInfo.id}"><button
 							class="btn btn-outline-danger active">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
@@ -92,7 +92,7 @@
 				</c:if>
 				<c:if test="${flag == 'false' }">
 					<a
-						href="insertjjim.member?video_num=${dmb.num}&member_id=${loginInfo.id}&video_category=${dmb.category}">
+						href="insertjjim.member?video_num=${db.num}&member_id=${loginInfo.id}">
 						<button class="btn btn-outline-danger">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
@@ -104,11 +104,11 @@
 				</c:if>
 			</div>
 			<c:choose>
-		<c:when test="${dmb.grade eq 'all'}">
-		<div>${dmb.genre } ${dmb.runningT }분 ${dmb.grade } </div>
+		<c:when test="${db.grade eq 'all'}">
+		<div>${db.genre } ${db.runningT }분 ${db.grade } </div>
 		</c:when>
 		<c:otherwise>
-		<div>${dmb.genre } ${dmb.runningT }분 ${dmb.grade }세 </div>
+		<div>${db.genre } ${db.runningT }분 ${db.grade }세 </div>
 		</c:otherwise>
 		</c:choose>
 			<hr>
@@ -116,9 +116,9 @@
 				<span id="toggle" onclick="openCloseToc()">더보기</span>
 				<div id="tContent">
 					<div class="infor_sub">
-						<br> 개봉: ${dmb.day } <br> <br> 장르 : ${dmb.genre } <br>
-						<br> 관람연령 : ${dmb.grade }세 <br> <br> 출연배우 :
-						${dmb.actor } <br> <br> 줄거리 : ${dmb.content }
+						<br> 개봉: ${db.day } <br> <br> 장르 : ${db.genre } <br>
+						<br> 관람연령 : ${db.grade }세 <br> <br> 출연배우 :
+						${db.actor } <br> <br> 줄거리 : ${db.content }
 
 					</div>
 				</div>
@@ -130,32 +130,33 @@
 
 <div>
 	<div class="usaGenre">
-		비슷한 영화
+		다른 영상
 	</div>
 	<c:forEach var="glist" items="${dlists }" >
 				<div style="display: inline-block;">
 					<div class="else" >
 							<c:forEach var="clist" items="${clists }">
-								<c:if test="${glist.vnum eq clist.num && glist.title ne dmb.title }" >
-						<figure>
-									<a href="detailMain.wa?num=${clist.num}"><img src="resources/images/poster/${clist.image}" class="poster_img"/>	</a>							
-						</figure>
-						<h4><span class="icon all ir_pm">
-						<c:if test="${glist.grade eq 18 }">
-						<img src="resources/images/icon/18.svg" class="icon_img">
+						<c:if test="${glist.vnum eq clist.num  && glist.title ne db.title}">
+				<figure>
+							<a href="detailMovie.category?num=${clist.num}"><img src="resources/images/poster/${clist.image}"
+								class="poster_img" /></a>
+					
+				</figure>
+				<h4>
+					<span class="icon all ir_pm"> <c:if
+							test="${glist.grade eq '18' }">
+							<img src="resources/images/icon/18.svg" class="icon_img">
+						</c:if> <c:if test="${glist.grade eq '15' }">
+							<img src="resources/images/icon/15.svg" class="icon_img">
+						</c:if> <c:if test="${glist.grade eq '12' }">
+							<img src="resources/images/icon/12.svg" class="icon_img">
+						</c:if> <c:if test="${glist.grade eq 'all' }">
+							<img src="resources/images/icon/all.svg" class="icon_img">
 						</c:if>
-						<c:if test="${glist.grade eq 15 }">
-						<img src="resources/images/icon/15.svg" class="icon_img">
+					</span> <strong><a href="detailMovie.category?num=${clist.num}">${glist.title }</a></strong>
+				</h4>
 						</c:if>
-						<c:if test="${glist.grade eq 12 }">
-						<img src="resources/images/icon/12.svg" class="icon_img">
-						</c:if>
-						<c:if test="${glist.grade eq all }">
-						<img src="resources/images/icon/all.svg" class="icon_img">
-						</c:if>
-						</span> <strong><a href="detailMain.wa?num=${clist.num}">${glist.title }</a></strong></h4>
-						</c:if>
-							</c:forEach>
+					</c:forEach>
 					</div>
 				</div>
 				</c:forEach>
