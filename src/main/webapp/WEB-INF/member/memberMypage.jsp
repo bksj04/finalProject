@@ -9,7 +9,6 @@
 table {
 	height: 20%;
 	font-style: white;
-	width:100%;
 }
 </style>
 <%@ include file="../common/common.jsp"%>
@@ -19,15 +18,15 @@ table {
 			<h5>${loginInfo.name } 님</h5>
 			<hr>
 			<h5>구매한 컨텐츠</h5>
-	<table style="text-align: center; margin: 5px;">
-		<tr>
+	<table style="text-align: center; margin: 5px; width:100%;">
+		<tr align=center>
 		<c:if test="${cb == null}">
-			<td align=center>
+			<td>
 			현재 구매한 이용권이 없습니다
 			</td>
 			</c:if>
 			<c:if test="${cb != null}">
-			<td align=center>
+			<td>
 			<font color="white">${cb.name} 이용권을 이용 중입니다.</font>
 			</td>
 			</c:if>
@@ -46,10 +45,12 @@ table {
 		<h5>시청 내역</h5>
 		<div>
 			<table>
-				<tr>
 					<c:if test="${empty wblists }">
+					<tr align="center">
 						<td align="center">시청내역이 없습니다.</td>
+					</tr>
 					</c:if>
+					<tr>
 					<c:forEach var="watch" items="${wblists}">
 						<td><c:if test="${watch.video_category == 'main' }">
 								<a
@@ -64,19 +65,19 @@ table {
 							</c:if></td>
 					</c:forEach>
 				</tr>
-				<div align="right">
+
 				<c:choose>
 				<c:when test="${empty wblists }">
 						
 				</c:when>
 				<c:otherwise>
-					
+									<div align="right">
 					<br>					
 					<a href="deletewatch.member"><button class="btn btn-primary">시청기록 지우기</button></a>
-					
+									</div>
 				</c:otherwise>					
 				</c:choose>
-				</div>
+
 			</table>
 		</div>
 	</div>
