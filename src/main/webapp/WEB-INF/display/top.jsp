@@ -68,7 +68,7 @@ overflow:auto;
 
 <script type="text/javascript">
 function openPop(){
-    var popup = window.open("messageList.wa", "쪽지함", "width=700px,height=800px,scrollbars=yes");
+    var popup = window.open("messageList.wa", "알림함", "width=700px,height=800px,scrollbars=yes");
 }
 </script>
 
@@ -92,7 +92,7 @@ function openPop(){
     <a href="mypage.member?num=${loginInfo.num}&movie_title=${db.title}">마이페이지</a>
     <a href="userupdate.member?num=${loginInfo.num}">회원 정보 수정</a>
     </c:if>
-    <a href="#none" target="_blank" onclick="openPop()">쪽지함</a>
+    <a href="#none" target="_blank" onclick="openPop()">알림함</a>
     <a href="logout.member">로그아웃</a>
   </div>
 </div>

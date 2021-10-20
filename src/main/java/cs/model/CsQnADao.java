@@ -47,4 +47,8 @@ private String namespace = "cs.model.CsQnABean";
 		int count = sqlSessionTemplate.selectOne(namespace+".getByTotalCount",writer);
 		return count;
 	}
+	public int deleteData(int num) {
+		int cnt = sqlSessionTemplate.delete(namespace+".deleteData",num);
+		return cnt;
+	}
 }

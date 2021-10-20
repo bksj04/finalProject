@@ -10,7 +10,7 @@
 	}
 </style>
 <div id="alrim">
-<div id="title" align="center">쪽지함</div>
+<div id="title" align="center">알림함</div>
 <div class="container row" style="float: none; margin:100 auto;">
 <div class="col-md-3" style="float: none; margin:0 auto;">
 <table class="table table-hover" style="text-align: center">

@@ -18,7 +18,6 @@ table {
 			<th scope="col" width="300">제목</th>
 			<th scope="col">작성자</th>
 			<th scope="col">등록일</th>
-			<th scope="col">수정</th>
 			<th scope="col">삭제</th>
 		</tr>
 	</thead>
@@ -31,7 +30,7 @@ table {
 				질문
 				</c:if>
 				<c:if test="${cqb.re_level == 1}">
-				<img src="resources/images/re.gif">답변완료
+				<img src="resources/images/re.gif">답변
 				</c:if>
 				</td>
 				<td width="300"><a
@@ -41,8 +40,7 @@ table {
 						var="noticePostDate" pattern="yyyy-MM-dd" /> <fmt:formatDate
 						value="${noticePostDate}" pattern="yyyy-MM-dd" var="reg_date" />
 					${reg_date}</td>
-				<td><a href="noticeUpdate.admin?num=${cqb.num }">수정</a></td>
-				<td><a href="noticeDelete.admin?num=${cqb.num }">삭제</a></td>
+				<td><a href="qnaDelete.admin?num=${cqb.num }">삭제</a></td>
 
 			</tr>
 		</c:forEach>
