@@ -2,11 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@include file="../admin/display/top.jsp" %>
 <%@include file="./../common/common.jsp"%>
-
-
-<script type="text/javascript">
-	
-</script>
 <style>
 .err{
 		font-size: 13pt;
@@ -38,6 +33,13 @@ td{
 	width: 70%;
 }
 </style>
+<script src="resources/js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	alert("1")
+}
+</script>
+
 <div class="row" id="container">
 	<div class="col-lg-2">
 		<%@include file="../admin/display/left.jsp" %>
@@ -74,13 +76,13 @@ td{
 				<form:errors cssClass="err" path="grade" />
 			</div>
 			<div>
-				<input type="file" name="file">
+				<input type="file" name="file" id=file>
 				
 			</div>
 		</fieldset>
 		<br><br>
 			<div align="center">
-			<input type="submit" class="btn btn-primary" value="다음">
+			<input type="submit" id="sub" class="btn btn-primary" value="다음">
 			<input type="button" class="btn btn-primary" onclick="history.go(-1);" value="취소">
 			</div>
 				</form:form>

@@ -42,7 +42,7 @@ public class AdminInsertVideoController {
 			) {
 		
 		ModelAndView mav=new ModelAndView();	
-		if(result.hasErrors()) {
+		if(result.hasErrors() || file.isEmpty() ) {
 			System.out.println("에러.");
 			mav.setViewName(getPage);
 			return mav;

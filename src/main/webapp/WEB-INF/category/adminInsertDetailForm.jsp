@@ -59,7 +59,7 @@ td{
 			<div class="form-group">
 				<label for="runningT" class="form-label mt-4">러닝타임</label>
 				<input type="text" name="runningT">
-				<form:errors cssClass="err" path="runningT" />
+				
 			</div>
 			<div class="form-group">
 				<label for="genre" class="form-label mt-4">장르</label>
@@ -88,7 +88,7 @@ td{
 			<div class="form-group">
 				<label for="series" class="form-label mt-4">제작 화수</label>
 				<input type="text" name="series">
-				<form:errors cssClass="err" path="series" />
+				
 			</div>
 		</fieldset>
 		<br><br>
