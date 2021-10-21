@@ -10,7 +10,7 @@ insert into members values(members_seq.nextval,#{id},#{password},#{name},sysdate
 </insert>
 
 <select id="selectAll" resultType="MyMember">
-	select * from members
+	select * from members order by num asc
 </select>
 
 <select id="getData" resultType="MyMember">
@@ -42,6 +42,8 @@ select * from members where name = #{name} and id = #{id}
 		<if test="whatColumn=='name'">
 			where name like #{keyword}
 		</if>
+		
+		order by num asc
 	</select>
 	
 	<select id="getMemberOrderList" resultType="MyMember">
@@ -52,6 +54,8 @@ select * from members where name = #{name} and id = #{id}
 		<if test="whatColumn=='name'">
 			where name like #{keyword}
 		</if>
+		
+		order by num asc
 	</select>
 	
 	<select id="getMember" resultType="MyMember">
