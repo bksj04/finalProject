@@ -70,6 +70,14 @@
 		</div>
 		<div class="infor">
 			<div class="infor_title">${db.title }</div>
+						<c:choose>
+		<c:when test="${db.grade eq 'all'}">
+		<div>${db.genre } ${db.runningT }분 ${db.grade } </div>
+		</c:when>
+		<c:otherwise>
+		<div>${db.genre } ${db.runningT }분 ${db.grade }세 </div>
+		</c:otherwise>
+		</c:choose>
 			<div>
 				<a href="play.video?video_num=${db.num}&member_id=${loginInfo.id}&video_image=${db.image}"><button
 						name="view" class="btn btn-primary">시청하기</button></a>&nbsp;&nbsp;&nbsp;
@@ -81,8 +89,8 @@
 				</c:forEach>
 				<c:if test="${flag == 'true' }">
 					<a
-						href="deletejjim.member?video_num=${db.num}&member_id=${loginInfo.id}"><button
-							class="btn btn-outline-danger active">
+						href="deletejjim.member?video_num=${db.num}&member_id=${loginInfo.id}&video_category=main"><button
+							class="btn btn-outline-danger active">찜
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
   <path
@@ -92,8 +100,8 @@
 				</c:if>
 				<c:if test="${flag == 'false' }">
 					<a
-						href="insertjjim.member?video_num=${db.num}&member_id=${loginInfo.id}&video_category=${db.category}">
-						<button class="btn btn-outline-danger">
+						href="insertjjim.member?video_num=${db.num}&member_id=${loginInfo.id}&video_category=main">
+						<button class="btn btn-outline-danger">찜
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
   <path
@@ -103,14 +111,6 @@
 					</a>
 				</c:if>
 			</div>
-			<c:choose>
-		<c:when test="${db.grade eq 'all'}">
-		<div>${db.genre } ${db.runningT }분 ${db.grade } </div>
-		</c:when>
-		<c:otherwise>
-		<div>${db.genre } ${db.runningT }분 ${db.grade }세 </div>
-		</c:otherwise>
-		</c:choose>
 			<hr>
 			<div>
 				<span id="toggle" onclick="openCloseToc()">더보기</span>
