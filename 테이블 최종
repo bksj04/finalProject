@@ -334,15 +334,15 @@ insert into commodity values(commodity_seq.nextval,'Standard X Bugs 듣기',
 insert into commodity values(commodity_seq.nextval,'Premium X KB 나라사랑카드',
 '동시시청 1회선,HD화질,모바일+PC',7900);
 
-insert into board values(board_seq.nextval,'admin','기생충후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','기생충후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','기생충후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','기생충후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','기생충후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','기생충후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','기생충후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','기생충후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','기생충후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'admin','기생충 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'admin','감기 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'admin','노팅힐 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'admin','터미네이터 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'admin','기생충 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'admin','감기 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'admin','노팅힐 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'admin','터미네이터 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'admin','기생충 후기',sysdate,0,'너무재미있어요!!');
 
 
 commit; 
