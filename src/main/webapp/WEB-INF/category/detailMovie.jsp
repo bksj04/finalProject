@@ -9,11 +9,11 @@
 #detailVideo{
 	margin: 0 auto;
 	text-align: center;
-	width:400px;
+
 }
 .poster {
-	width: 100%;
-	height: 300px;
+	width:400px;
+		height:400px;
 }
 .poster_img {
 	width: 200px;
@@ -64,9 +64,9 @@
 <div id="detailVideoWrapper">
 	<div id="detailVideo">
 		<div class="poster">
-				<figure>
-				<img src="resources/images/poster/${db.image}" class="poster_img" />
-				</figure>
+				 <article>
+				<img src="resources/images/poster/${db.image}" style="width:100%;height: 100%; object-fit: contain;"/>
+				</article>
 		</div>
 		<div class="infor">
 			<div class="infor_title">${db.title }</div>

@@ -12,8 +12,8 @@
 	width:400px;
 }
 .poster {
-	width: 100%;
-	height: 300px;
+	width: 400px;
+	height: 400px;
 }
 .poster_img {
 	width: 200px;
@@ -65,7 +65,7 @@
 	<div id="detailVideo">
 		<div class="poster">
 				<figure>
-				<img src="resources/images/poster/${db.image}" class="poster_img" />
+				<img src="resources/images/poster/${db.image}" style="width:100%;height: 100%; object-fit: contain;"/>
 				</figure>
 		</div>
 		<div class="infor">
